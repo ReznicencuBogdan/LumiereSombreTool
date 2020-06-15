@@ -1,0 +1,4738 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+LumiereServer
+</name>
+</assembly>
+<members>
+<member name="M:LumiereServer.My.MyApplication.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.My.MyApplication"/> class.
+ </summary>
+</member>
+<member name="M:LumiereServer.My.MyApplication.OnCreateMainForm">
+ <summary>
+ Called when [create main form].
+ </summary>
+</member>
+<member name="T:LumiereServer.My.Resources.Resources">
+ <summary>
+ A strongly-typed resource class, for looking up localized strings, etc.
+ </summary>
+</member>
+<member name="F:LumiereServer.My.Resources.Resources.resourceMan">
+ <summary>
+ The resource man
+ </summary>
+</member>
+<member name="F:LumiereServer.My.Resources.Resources.resourceCulture">
+ <summary>
+ The resource culture
+ </summary>
+</member>
+<member name="P:LumiereServer.My.Resources.Resources.ResourceManager">
+ <summary>
+ Returns the cached ResourceManager instance used by this class.
+ </summary>
+ <value>The resource manager.</value>
+</member>
+<member name="P:LumiereServer.My.Resources.Resources.Culture">
+ <summary>
+ Overrides the current thread's CurrentUICulture property for all
+ resource lookups using this strongly typed resource class.
+ </summary>
+ <value>The culture.</value>
+</member>
+<member name="P:LumiereServer.My.Resources.Resources.ntitle4">
+ <summary>
+ Looks up a localized resource of type System.Drawing.Bitmap.
+ </summary>
+ <value>The ntitle4.</value>
+</member>
+<member name="T:LumiereServer.My.MySettings">
+ <summary>
+ Class MySettings. This class cannot be inherited.
+ Implements the <see cref="T:System.Configuration.ApplicationSettingsBase" />
+ </summary>
+ <seealso cref="T:System.Configuration.ApplicationSettingsBase" />
+</member>
+<member name="F:LumiereServer.My.MySettings.defaultInstance">
+ <summary>
+ The default instance
+ </summary>
+</member>
+<member name="F:LumiereServer.My.MySettings.addedHandler">
+ <summary>
+ The added handler
+ </summary>
+</member>
+<member name="F:LumiereServer.My.MySettings.addedHandlerLockObject">
+ <summary>
+ The added handler lock object
+ </summary>
+</member>
+<member name="M:LumiereServer.My.MySettings.AutoSaveSettings(System.Object,System.EventArgs)">
+ <summary>
+ Automatics the save settings.
+ </summary>
+ <param name="sender">The sender.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="P:LumiereServer.My.MySettings.Default">
+ <summary>
+ Gets the default.
+ </summary>
+ <value>The default.</value>
+</member>
+<member name="P:LumiereServer.My.MySettings.ServerClientManagement2003ConnectionString">
+ <summary>
+ Gets the server client management2003 connection string.
+ </summary>
+ <value>The server client management2003 connection string.</value>
+</member>
+<member name="T:LumiereServer.My.MySettingsProperty">
+ <summary>
+ Class MySettingsProperty.
+ </summary>
+</member>
+<member name="P:LumiereServer.My.MySettingsProperty.Settings">
+ <summary>
+ Gets the settings.
+ </summary>
+ <value>The settings.</value>
+</member>
+<member name="T:LumiereServer.ClientCollectionSource_">
+ <summary>
+ Class ClientCollectionSource_.
+ Holds a list of connected clients. Syncs with ui device.
+ Implements the <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" />
+ </summary>
+ <seealso cref="T:System.Collections.ObjectModel.ObservableCollection`1" />
+</member>
+<member name="T:LumiereServer.ClientInstance">
+ <summary>
+ Class ClientInstance.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.usrdescriptor">
+ <summary>
+ The usrdescriptor
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.flashRecvTimeout">
+ <summary>
+ The flash recv timeout
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.socket">
+ <summary>
+ The socket
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.workingPath">
+ <summary>
+ The working path i.e current durectory of client's resources path.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.ip">
+ <summary>
+ The ip of the client.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.onReceiveCallback">
+ <summary>
+ Called when packet is received.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.onDestroyCallback">
+ <summary>
+ Called on client destruction.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.thread_receive_handle">
+ <summary>
+ Syncr. socket tasks performed on this thread.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.threadAuthentificate">
+ <summary>
+ The thread that handles authentification.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.destroyed">
+ <summary>
+ Client destroyed flag.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.destroy_lock">
+ <summary>
+ No concurrency issues if threads decide simultaniously to destroy client.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.parentClientWrapper">
+ <summary>
+ A wrapper object that collects instances of different modules that belong to one client in one place.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.authentificated">
+ <summary>
+ Authentification stage:     
+ 0 default
+ 1 not authentificated
+ 2 authentificated
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.debugMessage">
+ <summary>
+ Handle a client debug msg stream.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.token_generator">
+ <summary>
+ Client's specific tokenizer.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.errorConcurrentQueue">
+ <summary>
+ The error concurrent queue
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.token_dictionary">
+ <summary>
+ Dictionary of registered tokens.
+ </summary>
+</member>
+<member name="T:LumiereServer.ClientInstance.TokenData">
+ <summary>
+ Data about a token
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.TokenData.timestamp">
+ <summary>
+ The timestamp
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.TokenData.onetime_use">
+ <summary>
+ The onetime use
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientInstance.TokenData.datatype">
+ <summary>
+ The datatype
+ </summary>
+</member>
+<member name="M:LumiereServer.ClientInstance.#ctor(System.Net.Sockets.TcpClient)">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ClientInstance"/> class.
+ </summary>
+ <param name="client">The client.</param>
+</member>
+<member name="M:LumiereServer.ClientInstance.start_client_component">
+ <summary>
+ Starts the client thread.
+ </summary>
+</member>
+<member name="M:LumiereServer.ClientInstance.destroy">
+ <summary>
+ Destroys this instance.
+ </summary>
+</member>
+<member name="M:LumiereServer.ClientInstance.Finalize">
+ <summary>
+ If the GC decides this object should be destroyed then take care of releasing valuable resources.
+ </summary>
+</member>
+<member name="M:LumiereServer.ClientInstance.ping_protocol">
+ <summary>
+ Pings the protocol.
+ </summary>
+ <returns><c>true</c> if sent, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.send(System.Byte[]@,LumiereServer.MPacketModule.com_packet@)">
+ <summary>
+ Sends the specified byte buffer with details set in com_packet.
+ </summary>
+ <param name="buffer">The buffer.</param>
+ <param name="_packet">The packet.</param>
+ <returns><c>true</c> if sent, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.send(System.Byte[]@,System.UInt64)">
+ <summary>
+ Sends the specified buffer of specified uint64 size.
+ </summary>
+ <param name="buffer">The buffer.</param>
+ <param name="cbSize">Size of the cb.</param>
+ <returns><c>true</c> if socket.Client.Send <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.send_header(System.Int32,System.UInt64,LumiereServer.MPacketModule.com_packet@)">
+ <summary>
+ Sends the header with details set in com_packet.Higher level function.
+ </summary>
+ <param name="dataType">Type of the data.</param>
+ <param name="packetSize">Size of the packet.</param>
+ <param name="sPacket">The s packet.</param>
+ <returns><c>true</c> if send_header <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.send_header(System.Int32,System.UInt64,System.String@,LumiereServer.MPacketModule.com_packet@)">
+ <summary>
+ Sends the header low level version. Xors the data and sets token flags.
+ </summary>
+ <param name="dataType">Type of the data.</param>
+ <param name="packetSize">Size of the packet.</param>
+ <param name="arguments">The arguments.</param>
+ <param name="sPacket">The s packet.</param>
+ <returns><c>true</c> if sent, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.authentificate(LumiereServer.MPacketUserDescriptor.userdescriptor)">
+ <summary>
+ Handles part of authentification. Fills updatedUserDescriptor.
+ </summary>
+ <param name="updatedUserDescriptor">The updated user descriptor.</param>
+ <returns><c>true</c> if socket communication worked, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.receive(System.Byte[]@,LumiereServer.MPacketModule.com_packet@)">
+ <summary>
+ Receives the specified buffer.
+ </summary>
+ <param name="buffer">The buffer.</param>
+ <param name="_packet">The packet.</param>
+ <returns><c>true</c> if received <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.receive(System.Byte[]@,System.UInt64)">
+ <summary>
+ Receives the specified buffer.
+ </summary>
+ <param name="buffer">The buffer.</param>
+ <param name="cbSize">Size of the cb.</param>
+ <returns><c>true</c> if received, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.receive_fragmented(System.Byte[],LumiereServer.MPacketModule.com_packet,System.UInt64,System.Func{System.UInt64,System.Boolean})">
+ <summary>
+ Receives data according to om_packet in chunks in a controlled environment. Calls the calllback for each sub packet
+ </summary>
+ <param name="sAddress">The buffer address.</param>
+ <param name="rPacket">Packet details.</param>
+ <param name="cbFragBytes">Count bytes received</param>
+ <param name="fragReceivalCallback">The fragment received callback.</param>
+ <returns><c>true</c> if received, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.receive_header(LumiereServer.MPacketModule.com_packet@)">
+ <summary>
+ Receives a header pushed on the stack.
+ </summary>
+ <param name="ccmPacket">The CCM packet to write into.</param>
+ <returns><c>true</c> if received, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.threadAuthentificateFunc">
+ <summary>
+ Thread that handles the authentification process.
+ </summary>
+</member>
+<member name="M:LumiereServer.ClientInstance.receive_callback_internal_message_filter">
+ <summary>
+ This method low parses the data to capture low level events with regard to the ArcherTcp protocol
+ </summary>
+</member>
+<member name="M:LumiereServer.ClientInstance.get_user_descriptor">
+ <summary>
+ Gets the user descriptor.
+ </summary>
+ <returns>userdescriptor.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.get_client_type">
+ <summary>
+ Gets the type of the client.
+ Will be filled if the authentificate method succeds
+ otherwise is nothing.
+ </summary>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.get_client_type_string">
+ <summary>
+ Gets the client type string.
+ </summary>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.get_system_id">
+ <summary>
+ Gets the system unique identifier.
+ </summary>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.get_to_string">
+ <summary>
+ Override ToString
+ </summary>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.getLastErrors">
+ <summary>
+ Gets the last errors.
+ </summary>
+ <returns>ConcurrentQueue(Of System.String).</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.setLastError(System.String)">
+ <summary>
+ Sets the last error.
+ </summary>
+ <param name="errorString">The error string.</param>
+</member>
+<member name="M:LumiereServer.ClientInstance.set_debugging_slot(System.Action{System.String,System.Int32})">
+ <summary>
+ Sets the debugging slot. Callback method.
+ </summary>
+ <param name="mDebuggingFunction">The m debugging function.</param>
+</member>
+<member name="M:LumiereServer.ClientInstance.set_receive_timeout(System.Int32)">
+ <summary>
+ Sets the receive timeout.
+ </summary>
+ <param name="tmt">The TMT.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.set_send_timeout(System.Int32)">
+ <summary>
+ Sets the send timeout.
+ </summary>
+ <param name="tmt">The TMT.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ClientInstance.set_on_receive(System.Func{LumiereServer.ClientInstance,LumiereServer.MPacketModule.com_packet,System.Boolean})">
+ <summary>
+ Sets the on receive callback. For the packet to be forwarded.
+ </summary>
+ <param name="onrecv">The onrecv.</param>
+</member>
+<member name="M:LumiereServer.ClientInstance.set_on_destroy(System.Func{LumiereServer.ClientWrapper,LumiereServer.ClientInstance,System.Boolean})">
+ <summary>
+ Sets the on destroy callback. For the packet to be forwarded.
+ </summary>
+ <param name="ondestr">The ondestr.</param>
+</member>
+<member name="M:LumiereServer.ClientInstance.set_parrent_wrapper(LumiereServer.ClientWrapper)">
+ <summary>
+ Sets the parrent wrapper. Now this client module belongs to a higher class.
+ </summary>
+ <param name="clWrapper">The cl wrapper.</param>
+</member>
+<member name="T:LumiereServer.Constants">
+ <summary>
+ Class Of Constants. The library of everything.
+ </summary>
+</member>
+<member name="F:LumiereServer.Constants.resourcesPath">
+ <summary>
+ The resources path where all resources of every client is saved.
+ </summary>
+</member>
+<member name="T:LumiereServer.DatabaseUsers">
+ <summary>
+ Manages user database operations.
+ </summary>
+</member>
+<member name="F:LumiereServer.DatabaseUsers.ODBConnection">
+ <summary>
+ The odb connection used to communicate with the database.
+ </summary>
+</member>
+<member name="F:LumiereServer.DatabaseUsers.syncroot">
+ <summary>
+ The synchronization object.
+ </summary>
+</member>
+<member name="M:LumiereServer.DatabaseUsers.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.DatabaseUsers"/> class.
+ </summary>
+</member>
+<member name="M:LumiereServer.DatabaseUsers.registerNewUser(LumiereServer.ClientInstance)">
+ <summary>
+ Registers a new user.Adds it to the database.
+ </summary>
+ <param name="client">The client.</param>
+</member>
+<member name="M:LumiereServer.DatabaseUsers.blackListUser(System.String)">
+ <summary>
+ Blacklist the user.
+ </summary>
+ <param name="ip">The ip.</param>
+</member>
+<member name="M:LumiereServer.DatabaseUsers.isUserRegistered(System.String)">
+ <summary>
+ Determines whether [is user registered] for [the specified ip].
+ </summary>
+ <param name="ip">The ip.</param>
+ <returns><c>true</c> if [is user registered] for [the specified ip]; otherwise, <c>false</c>.</returns>
+</member>
+<member name="M:LumiereServer.DatabaseUsers.isUserBlacklisted(System.String)">
+ <summary>
+ Determines whether [is user blacklisted] for [the specified ip].
+ </summary>
+ <param name="ip">The ip.</param>
+ <returns><c>true</c> if [is user blacklisted] for [the specified ip]; otherwise, <c>false</c>.</returns>
+</member>
+<member name="M:LumiereServer.DatabaseUsers.removeFromBlacklist(System.String)">
+ <summary>
+ Removes user from blacklist.
+ </summary>
+ <param name="ip">The ip of the user.</param>
+</member>
+<member name="M:LumiereServer.DatabaseUsers.fillDataGridComponent(System.Windows.Forms.DataGridView,System.Windows.Forms.DataGridView)">
+ <summary>
+ Fills the data grid component.
+ </summary>
+ <param name="tableRegistered">The registered users gridview component.</param>
+ <param name="tableBlacklist">The blacklisted users gridview component.</param>
+</member>
+<member name="M:LumiereServer.DatabaseUsers.Finalize">
+ <summary>
+ Finalizes this instance.
+ </summary>
+</member>
+<member name="T:LumiereServer.MGdiPinvoke">
+ <summary>
+ Holds GDI Pinvoke Fast drawing methods.
+ </summary>
+</member>
+<member name="M:LumiereServer.MGdiPinvoke.SelectObject(System.IntPtr,System.IntPtr)">
+ <summary>
+ Selects the object.
+ </summary>
+ <param name="hdc">The HDC.</param>
+ <param name="hObject">The h object.</param>
+ <returns>IntPtr.</returns>
+</member>
+<member name="M:LumiereServer.MGdiPinvoke.DeleteObject(System.IntPtr)">
+ <summary>
+ Deletes the object.
+ </summary>
+ <param name="hObject">The h object.</param>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.MGdiPinvoke.DeleteDC(System.IntPtr)">
+ <summary>
+ Deletes the dc.
+ </summary>
+ <param name="hdc">The HDC.</param>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.MGdiPinvoke.CreateCompatibleBitmap(System.IntPtr,System.Int32,System.Int32)">
+ <summary>
+ Creates the compatible bitmap.
+ </summary>
+ <param name="hdc">The HDC.</param>
+ <param name="nWidth">Width of the n.</param>
+ <param name="nHeight">Height of the n.</param>
+ <returns>IntPtr.</returns>
+</member>
+<member name="M:LumiereServer.MGdiPinvoke.CreateCompatibleDC(System.IntPtr)">
+ <summary>
+ Creates the compatible dc.
+ </summary>
+ <param name="hRefDC">The h reference dc.</param>
+ <returns>IntPtr.</returns>
+</member>
+<member name="M:LumiereServer.MGdiPinvoke.SetStretchBltMode(System.IntPtr,System.Int32)">
+ <summary>
+ Sets the stretch BLT mode.
+ </summary>
+ <param name="hdc">The HDC.</param>
+ <param name="iStretchMode">The i stretch mode.</param>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.MGdiPinvoke.StretchDIBits(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Byte[],LumiereServer.MGdiPinvoke.BITMAPINFO@,System.UInt32,System.UInt32)">
+ <summary>
+ Stretches the di bits.
+ </summary>
+ <param name="hdc">The HDC.</param>
+ <param name="XDest">The x dest.</param>
+ <param name="YDest">The y dest.</param>
+ <param name="nDestWidth">Width of the n dest.</param>
+ <param name="nDestHeight">Height of the n dest.</param>
+ <param name="XSrc">The x source.</param>
+ <param name="YSrc">The y source.</param>
+ <param name="nSrcWidth">Width of the n source.</param>
+ <param name="nSrcHeight">Height of the n source.</param>
+ <param name="lpBits">The lp bits.</param>
+ <param name="lpBitsInfo">The lp bits information.</param>
+ <param name="iUsage">The i usage.</param>
+ <param name="dwRop">The dw rop.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="T:LumiereServer.MGdiPinvoke.RGBQUAD">
+ <summary>
+ Struct RGBQUAD
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.RGBQUAD.rgbBlue">
+ <summary>
+ The RGB blue
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.RGBQUAD.rgbGreen">
+ <summary>
+ The RGB green
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.RGBQUAD.rgbRed">
+ <summary>
+ The RGB red
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.RGBQUAD.rgbReserved">
+ <summary>
+ The RGB reserved
+ </summary>
+</member>
+<member name="T:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER">
+ <summary>
+ Class BITMAPINFOHEADER.
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER.biSize">
+ <summary>
+ The bi size
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER.biWidth">
+ <summary>
+ The bi width
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER.biHeight">
+ <summary>
+ The bi height
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER.biPlanes">
+ <summary>
+ The bi planes
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER.biBitCount">
+ <summary>
+ The bi bit count
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER.biCompression">
+ <summary>
+ The bi compression
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER.biSizeImage">
+ <summary>
+ The bi size image
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER.biXPelsPerMeter">
+ <summary>
+ The bi x pels per meter
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER.biYPelsPerMeter">
+ <summary>
+ The bi y pels per meter
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER.biClrUsed">
+ <summary>
+ The bi color used
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFOHEADER.biClrImportant">
+ <summary>
+ The bi color important
+ </summary>
+</member>
+<member name="T:LumiereServer.MGdiPinvoke.BITMAPINFO">
+ <summary>
+ Struct BITMAPINFO
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFO.bmiheader">
+ <summary>
+ The bmiheader
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.BITMAPINFO.bmiColors">
+ <summary>
+ The bmi colors
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.DIB_RGB_COLORS">
+ <summary>
+ The dib RGB colors
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.SRCCOPY">
+ <summary>
+ The srccopy
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.HALFTONE">
+ <summary>
+ The halftone
+ </summary>
+</member>
+<member name="T:LumiereServer.MGdiPinvoke.FrameData">
+ <summary>
+ Holds a frame data
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.FrameData.pic">
+ <summary>
+ The picturebox component
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.FrameData.picGraphics">
+ <summary>
+ Graphics component
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.FrameData.picHDC">
+ <summary>
+ HDC
+ </summary>
+</member>
+<member name="F:LumiereServer.MGdiPinvoke.FrameData.oldSelectObject">
+ <summary>
+ The old object
+ </summary>
+</member>
+<member name="M:LumiereServer.MGdiPinvoke.FrameData.destroy">
+ <summary>
+ Destroys this instance.
+ </summary>
+</member>
+<member name="M:LumiereServer.MGdiPinvoke.updateDirectFrame(LumiereServer.MGdiPinvoke.FrameData,System.Byte[]@,LumiereServer.MGdiPinvoke.BITMAPINFO@,System.Int32)">
+ <summary>
+ Use this function to dynamically resize the array and write the output DIRECTLY on the picturebox skipping the internal buffer
+ If you use this function you must not use 'updatePictureHDC'
+ </summary>
+ <param name="data">The framedata.</param>
+ <param name="arr">The byte array.</param>
+ <param name="bmi">The bitmpainfo.</param>
+ <param name="frameShift">The frame shift.</param>
+</member>
+<member name="M:LumiereServer.MGdiPinvoke.initInternalFrame(System.Windows.Forms.PictureBox,System.Int32,System.Int32)">
+ <summary>
+ Initializes the internal frame.
+ </summary>
+ <param name="pic">The pic.</param>
+ <param name="maxWidth">The maximum width.</param>
+ <param name="maxHeight">The maximum height.</param>
+ <returns>FrameData.</returns>
+</member>
+<member name="M:LumiereServer.WindowVideo.Dispose(System.Boolean)">
+ <summary>
+ Represents an element in an XML resource (.resx) file.
+ </summary>
+ <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+</member>
+<member name="F:LumiereServer.WindowVideo.components">
+ <summary>
+ The components
+ </summary>
+</member>
+<member name="M:LumiereServer.WindowVideo.InitializeComponent">
+ <summary>
+ Initializes the component.
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowVideo._frameBuffer">
+ <summary>
+ The frame buffer
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowVideo._Panel1">
+ <summary>
+ The panel1
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowVideo._rowHeightControl">
+ <summary>
+ The row height control
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowVideo._framesCountControl">
+ <summary>
+ The frames count control
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowVideo._Label1">
+ <summary>
+ The label1
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowVideo._Label2">
+ <summary>
+ The label2
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowVideo._ReadFPSTimer">
+ <summary>
+ The read FPS timer
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowVideo._Label3">
+ <summary>
+ The label3
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowVideo._Button1">
+ <summary>
+ The button1
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowVideo.clickEvent">
+ <summary>
+ The click event
+ </summary>
+</member>
+<member name="P:LumiereServer.WindowVideo.getFramesCountValue">
+ <summary>
+ Gets the get frames count value.
+ </summary>
+ <value>The get frames count value.</value>
+</member>
+<member name="P:LumiereServer.WindowVideo.getRowHeightValue">
+ <summary>
+ Gets the get row height value.
+ </summary>
+ <value>The get row height value.</value>
+</member>
+<member name="P:LumiereServer.WindowVideo.setFPS">
+ <summary>
+ Sets the set FPS.
+ </summary>
+ <value>The set FPS.</value>
+</member>
+<member name="P:LumiereServer.WindowVideo.getLiveMouse">
+ <summary>
+ Gets the get live mouse.
+ </summary>
+ <value>The get live mouse.</value>
+</member>
+<member name="P:LumiereServer.WindowVideo.getLiveClick">
+ <summary>
+ Gets the get live click. 0 -nothing; 1 left click; 2 right click
+ </summary>
+ <value>The get live click.</value>
+</member>
+<member name="M:LumiereServer.WindowVideo.getCanvasInstance">
+ <summary>
+ Gets the canvas instance.
+ </summary>
+ <returns>PictureBox.</returns>
+</member>
+<member name="M:LumiereServer.WindowVideo.rowHeightControl_Scroll(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Scroll event of the rowHeightControl control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.WindowVideo.Button1_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the Button1 control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.WindowVideo.framesCountControl_Scroll(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Scroll event of the framesCountControl control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.WindowVideo.WindowVideo_Load(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Load event of the WindowVideo control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.WindowVideo.ReadFPSTimer_Tick(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Tick event of the ReadFPSTimer control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.WindowVideo.frameBuffer_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Handles the MouseMove event of the frameBuffer control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.WindowVideo.frameBuffer_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Handles the MouseClick event of the frameBuffer control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="T:LumiereServer.MemoryUtilities">
+ <summary>
+ Memory utilities.
+ </summary>
+</member>
+<member name="F:LumiereServer.MemoryUtilities.illegalPatternsChars">
+ <summary>
+ Illegal pattern chars
+ </summary>
+</member>
+<member name="M:LumiereServer.MemoryUtilities.hackedPathTraversal(System.String)">
+ <summary>
+ Checks for path traversal.
+ </summary>
+ <param name="path">The path.</param>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="T:LumiereServer.MemoryUtilities.informationcode">
+ <summary>
+ Enum informationcode
+ </summary>
+</member>
+<member name="F:LumiereServer.MemoryUtilities.informationcode.error">
+ <summary>
+ The error
+ </summary>
+</member>
+<member name="F:LumiereServer.MemoryUtilities.informationcode.normal">
+ <summary>
+ The normal
+ </summary>
+</member>
+<member name="F:LumiereServer.MemoryUtilities.informationcode.warning">
+ <summary>
+ The warning
+ </summary>
+</member>
+<member name="M:LumiereServer.MemoryUtilities.ZeroMemory(System.Byte[]@)">
+ <summary>
+ Zeroes the memory.
+ </summary>
+ <param name="buffer">The buffer.</param>
+</member>
+<member name="M:LumiereServer.MemoryUtilities.SafeString(System.String@)">
+ <summary>
+ Safes the string. Stops at the null char. Conversion between c string and .net string
+ </summary>
+ <param name="str">The string.</param>
+</member>
+<member name="M:LumiereServer.MemoryUtilities.StripUnicodeCharactersFromString(System.String@)">
+ <summary>
+ Strips the unicode characters from string.
+ </summary>
+ <param name="inputValue">The input value.</param>
+</member>
+<member name="T:LumiereServer.MTreeViewExtension">
+ <summary>
+ Class MTreeViewExtension. Handles the regedit view.
+ </summary>
+</member>
+<member name="M:LumiereServer.MTreeViewExtension.AddTreeNode(System.Windows.Forms.TreeNode,System.String)">
+ <summary>
+ Adds a node to a parent node in the tree view.
+ </summary>
+ <param name="parentNode">The parent node.</param>
+ <param name="text">The text.</param>
+ <returns>TreeNode.</returns>
+</member>
+<member name="M:LumiereServer.MTreeViewExtension.AddTreeNode(System.Windows.Forms.TreeView,System.String)">
+ <summary>
+ Adds a node to the master tree.
+ </summary>
+ <param name="treeView">The tree view.</param>
+ <param name="text">The text.</param>
+ <returns>TreeNode.</returns>
+</member>
+<member name="M:LumiereServer.MTreeViewExtension.GetNodeByFullPath(System.Windows.Forms.TreeView,System.String)">
+ <summary>
+ Gets the node by full path. Find node by id.
+ </summary>
+ <param name="treeView">The tree view.</param>
+ <param name="fullPath">The full path.</param>
+ <returns>TreeNode.</returns>
+</member>
+<member name="M:LumiereServer.MTreeViewExtension.regedit_get_full_path(System.Windows.Forms.TreeNode)">
+ <summary>
+ Regedit - the get full path.
+ </summary>
+ <param name="node">The node.</param>
+ <returns>System.String.</returns>
+</member>
+<member name="T:LumiereServer.Tokenizer">
+ <summary>
+ Class Tokenizer. Token generator.
+ </summary>
+</member>
+<member name="F:LumiereServer.Tokenizer.RSA">
+ <summary>
+ The RSA engine.
+ </summary>
+</member>
+<member name="F:LumiereServer.Tokenizer.salt_size">
+ <summary>
+ The salt size
+ </summary>
+</member>
+<member name="F:LumiereServer.Tokenizer.random_generator">
+ <summary>
+ A random generator
+ </summary>
+</member>
+<member name="F:LumiereServer.Tokenizer.allowed_timestamp_difference">
+ <summary>
+ The allowed timestamp difference
+ </summary>
+</member>
+<member name="F:LumiereServer.Tokenizer.magic_key">
+ <summary>
+ The magic key
+ </summary>
+</member>
+<member name="F:LumiereServer.Tokenizer.magic_key_len">
+ <summary>
+ The magic key length
+ </summary>
+</member>
+<member name="M:LumiereServer.Tokenizer.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.Tokenizer"/> class.
+ </summary>
+</member>
+<member name="M:LumiereServer.Tokenizer.Finalize">
+ <summary>
+ On destruction, destroy the RSA engine
+ </summary>
+</member>
+<member name="M:LumiereServer.Tokenizer.token_generate">
+ <summary>
+ Generate token.
+ </summary>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.Tokenizer.token_is_valid(System.String)">
+ <summary>
+ Is this token valid ?
+ </summary>
+ <param name="token">The token.</param>
+ <returns><c>true</c> if valid, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.Tokenizer.rsa_encrypt(System.Byte[],System.Security.Cryptography.RSACryptoServiceProvider)">
+ <summary>
+ Encrypt using RSA
+ </summary>
+ <param name="buffer">The buffer.</param>
+ <param name="RSC">The RSC.</param>
+ <returns>System.Byte().</returns>
+</member>
+<member name="M:LumiereServer.Tokenizer.rsa_decrypt(System.Byte[],System.Security.Cryptography.RSACryptoServiceProvider)">
+ <summary>
+ RSAs the decrypt.
+ </summary>
+ <param name="buffer">The buffer.</param>
+ <param name="RSC">The RSC.</param>
+ <returns>System.Byte().</returns>
+</member>
+<member name="M:LumiereServer.WindowByteViewer.Dispose(System.Boolean)">
+ <summary>
+ Represents an element in an XML resource (.resx) file.
+ </summary>
+ <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+</member>
+<member name="F:LumiereServer.WindowByteViewer.components">
+ <summary>
+ The components
+ </summary>
+</member>
+<member name="M:LumiereServer.WindowByteViewer.InitializeComponent">
+ <summary>
+ Initializes the component.
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowByteViewer._btnSave">
+ <summary>
+ The BTN save
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowByteViewer._lblRegInfoIntro">
+ <summary>
+ The label reg information intro
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowByteViewer._btnCancel">
+ <summary>
+ The BTN cancel
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowByteViewer._hexview">
+ <summary>
+ The hexview
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowByteViewer._lblRegPath">
+ <summary>
+ The label reg path
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowByteViewer.bytebuffer">
+ <summary>
+ The bytebuffer
+ </summary>
+</member>
+<member name="M:LumiereServer.WindowByteViewer.set_reg_value_path(System.String)">
+ <summary>
+ Sets the reg value path.
+ </summary>
+ <param name="rPath">The r path.</param>
+</member>
+<member name="M:LumiereServer.WindowByteViewer.set_hex_editor_data(System.String)">
+ <summary>
+ Sets the hexadecimal editor data.
+ </summary>
+ <param name="data">The data.</param>
+</member>
+<member name="M:LumiereServer.WindowByteViewer.get_bytes">
+ <summary>
+ Gets the bytes.
+ </summary>
+ <returns>System.Byte().</returns>
+</member>
+<member name="M:LumiereServer.WindowHelp.Dispose(System.Boolean)">
+ <summary>
+ Represents an element in an XML resource (.resx) file.
+ </summary>
+ <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+</member>
+<member name="F:LumiereServer.WindowHelp._TableLayoutPanel">
+ <summary>
+ The table layout panel
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowHelp._LogoPictureBox">
+ <summary>
+ The logo PictureBox
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowHelp._LabelProductName">
+ <summary>
+ The label product name
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowHelp._LabelVersion">
+ <summary>
+ The label version
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowHelp._LabelCompanyName">
+ <summary>
+ The label company name
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowHelp._TextBoxDescription">
+ <summary>
+ The text box description
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowHelp._OKButton">
+ <summary>
+ The ok button
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowHelp._LabelCopyright">
+ <summary>
+ The label copyright
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowHelp.components">
+ <summary>
+ The components
+ </summary>
+</member>
+<member name="M:LumiereServer.WindowHelp.InitializeComponent">
+ <summary>
+ Initializes the component.
+ </summary>
+</member>
+<member name="M:LumiereServer.WindowHelp.WindowHelp_Load(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Load event of the WindowHelp control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.WindowHelp.OKButton_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the OKButton control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="T:LumiereServer.WindowRegNewValue">
+ <summary>
+ Class WindowRegNewValue.
+ Implements the <see cref="T:System.Windows.Forms.Form" />
+ </summary>
+ <seealso cref="T:System.Windows.Forms.Form" />
+</member>
+<member name="M:LumiereServer.WindowRegNewValue.get_reg_value_name">
+ <summary>
+ Gets the name of the reg value.
+ </summary>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.WindowRegNewValue.get_reg_type">
+ <summary>
+ Gets the type of the reg.
+ </summary>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.WindowRegNewValue.get_reg_value_data">
+ <summary>
+ Gets the reg value data.
+ </summary>
+ <returns>System.String.</returns>
+</member>
+<member name="T:LumiereServer.WindowsStructures">
+ <summary>
+ Class WindowsStructures.
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.szOfWin32FindDataa">
+ <summary>
+ The sz of win32 find dataa
+ </summary>
+</member>
+<member name="T:LumiereServer.WindowsStructures.FILETIME">
+ <summary>
+ Struct FILETIME
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.FILETIME.dwLowDateTime">
+ <summary>
+ The dw low date time
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.FILETIME.dwHighDateTime">
+ <summary>
+ The dw high date time
+ </summary>
+</member>
+<member name="T:LumiereServer.WindowsStructures.WIN32_FIND_DATAA">
+ <summary>
+ Struct WIN32_FIND_DATAA
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.WIN32_FIND_DATAA.dwFileAttributes">
+ <summary>
+ The dw file attributes
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.WIN32_FIND_DATAA.ftCreationTime">
+ <summary>
+ The ft creation time
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.WIN32_FIND_DATAA.ftLastAccessTime">
+ <summary>
+ The ft last access time
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.WIN32_FIND_DATAA.ftLastWriteTime">
+ <summary>
+ The ft last write time
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.WIN32_FIND_DATAA.nFileSizeHigh">
+ <summary>
+ The n file size high
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.WIN32_FIND_DATAA.nFileSizeLow">
+ <summary>
+ The n file size low
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.WIN32_FIND_DATAA.dwReserved0">
+ <summary>
+ The dw reserved0
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.WIN32_FIND_DATAA.dwReserved1">
+ <summary>
+ The dw reserved1
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.WIN32_FIND_DATAA.cFileName">
+ <summary>
+ The c file name
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowsStructures.WIN32_FIND_DATAA.cAlternateFileName">
+ <summary>
+ The c alternate file name
+ </summary>
+</member>
+<member name="M:LumiereServer.WindowsStructures.convertStreamToWin32FindData(System.Byte[]@,System.UInt64)">
+ <summary>
+ Converts the stream to win32 find data.
+ </summary>
+ <param name="buf">The buf.</param>
+ <param name="offset">The offset.</param>
+ <returns>WIN32_FIND_DATAA.</returns>
+</member>
+<member name="M:LumiereServer.WindowsStructures.FormatFileSize(System.Int64)">
+ <summary>
+ Formats the size of the file.
+ </summary>
+ <param name="lngFileSize">Size of the LNG file.</param>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.WindowsStructures.FileTimeToDate(LumiereServer.WindowsStructures.FILETIME@)">
+ <summary>
+ Files the time to date.
+ </summary>
+ <param name="fTime">The f time.</param>
+ <returns>System.DateTime.</returns>
+</member>
+<member name="M:LumiereServer.WindowsStructures.FileTimeToString(LumiereServer.WindowsStructures.FILETIME@)">
+ <summary>
+ Files the time to string.
+ </summary>
+ <param name="fTime">The f time.</param>
+ <returns>System.String.</returns>
+</member>
+<member name="T:LumiereServer.MPacketUserDescriptor">
+ <summary>
+ The UserDescriptor class and the Helpers.
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.szOfUserDescriptor">
+ <summary>
+ The size of user descriptor
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.uidKeyTable">
+ <summary>
+ The uid key table. The id will be generated from these.
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.illegalPatternsChars">
+ <summary>
+ The illegal patterns chars.
+ </summary>
+</member>
+<member name="T:LumiereServer.MPacketUserDescriptor.userdescriptor">
+ <summary>
+ Holds user data.
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.userdescriptor.unique_id">
+ <summary>
+ The unique identifier
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.userdescriptor.user_name">
+ <summary>
+ The user name
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.userdescriptor.pc_description">
+ <summary>
+ The pc description
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.userdescriptor.custom_name">
+ <summary>
+ The custom name
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.userdescriptor.version">
+ <summary>
+ The version
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.userdescriptor.os_version">
+ <summary>
+ The os version
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.userdescriptor.os_time">
+ <summary>
+ The os time
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.userdescriptor.extra_data">
+ <summary>
+ The extra data
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketUserDescriptor.userdescriptor.client_type">
+ <summary>
+ The client type
+ </summary>
+</member>
+<member name="M:LumiereServer.MPacketUserDescriptor.getUserDescriptorFromStream(System.Byte[]@)">
+ <summary>
+ Gets the user descriptor from stream.
+ </summary>
+ <param name="buffer">The buffer.</param>
+ <returns>userdescriptor.</returns>
+</member>
+<member name="M:LumiereServer.MPacketUserDescriptor.convertUserDescriptorToStream(LumiereServer.MPacketUserDescriptor.userdescriptor@)">
+ <summary>
+ Converts the user descriptor to stream.
+ </summary>
+ <param name="userdata">The userdata.</param>
+ <returns>System.Byte().</returns>
+</member>
+<member name="M:LumiereServer.MPacketUserDescriptor.generateRandomUID">
+ <summary>
+ Generates the random uid.
+ </summary>
+ <returns>System.String.</returns>
+</member>
+<member name="T:LumiereServer.MDataTypes">
+ <summary>
+ Holds types of operations that is supported at the momment by the server.
+ </summary>
+</member>
+<member name="T:LumiereServer.MDataTypes.dataTypes">
+ <summary>
+ Enum dataTypes
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.ping_send">
+ <summary>
+ Send ping
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.ping_aknowledged">
+ <summary>
+ Ping aknowledged
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.close_client">
+ <summary>
+ Close client
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.fake_notification">
+ <summary>
+ Fake notification
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.authentificate">
+ <summary>
+ Authentificate operation
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.shell">
+ <summary>
+ Request shell command
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.abort">
+ <summary>
+ Abort any pending operation
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.enum_drives">
+ <summary>
+ Enumerate drives
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.enum_folders_and_files">
+ <summary>
+ Enumerate folders and files
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.download_file">
+ <summary>
+ Download file
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.download_folder">
+ <summary>
+ Download folder
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.delete_folder">
+ <summary>
+ Delete folder
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.delete_file">
+ <summary>
+ Delete file
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.rename">
+ <summary>
+ Rename
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.create_folder">
+ <summary>
+ Create folder
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.create_file">
+ <summary>
+ Create file
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.upload_file">
+ <summary>
+ Upload file
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.run">
+ <summary>
+ Run file
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.tcp_error_debugging">
+ <summary>
+ Low level error debugging
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.com_error_debugging">
+ <summary>
+ Low level comunication error debugging
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.video_frame">
+ <summary>
+ Video stream config
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.load_component">
+ <summary>
+ Force load specific component
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.flags_cancel_operation">
+ <summary>
+ Cancel operation
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.video_start">
+ <summary>
+ Start video stream
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.enum_keys">
+ <summary>
+ Enum regedit keys
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.enum_values">
+ <summary>
+ Enum regedit values
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.rename_key">
+ <summary>
+ Rename regedit key
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.delete_key">
+ <summary>
+ Delete regedit key
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.hide_key">
+ <summary>
+ Hide regedit key
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.create_key">
+ <summary>
+ Create regedit key
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.create_value">
+ <summary>
+ The create value
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.video_end">
+ <summary>
+ Video end stream
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.free_component">
+ <summary>
+ Free component
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.mouse_start">
+ <summary>
+ Mouse start tagging
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.mouse_pos">
+ <summary>
+ Mouse position
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.mouse_click_left">
+ <summary>
+ Mouse click left
+ </summary>
+</member>
+<member name="F:LumiereServer.MDataTypes.dataTypes.mouse_click_right">
+ <summary>
+ Mouse click right
+ </summary>
+</member>
+<member name="T:LumiereServer.MClientTypes">
+ <summary>
+ Holds types of clients that can at the moment be managed by the server. Anything else is discarded.
+ </summary>
+</member>
+<member name="T:LumiereServer.MClientTypes.clientTypes">
+ <summary>
+ Enum clientTypes
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.shell">
+ <summary>
+ The shell
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.screenCapture">
+ <summary>
+ The screen capture
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.ftp">
+ <summary>
+ The FTP
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.hooks">
+ <summary>
+ The hooks
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.autodestroy">
+ <summary>
+ The autodestroy
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.audio">
+ <summary>
+ The audio
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.bsod">
+ <summary>
+ The bsod
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.upload_manager">
+ <summary>
+ The upload manager
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.download_manager">
+ <summary>
+ The download manager
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.regedit">
+ <summary>
+ The regedit
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.mouse">
+ <summary>
+ The mouse
+ </summary>
+</member>
+<member name="F:LumiereServer.MClientTypes.clientTypes.ctypesize">
+ <summary>
+ The ctypesize
+ </summary>
+</member>
+<member name="T:LumiereServer.ClientWrapper">
+ <summary>
+ Class ClientWrapper. Holds multiple subclient/submodules that identify a online
+ component that belongs to one client. So one client on the server is actually a 
+ list of real clients.
+ Implements the <see cref="T:System.ComponentModel.INotifyPropertyChanged" />
+ </summary>
+ <seealso cref="T:System.ComponentModel.INotifyPropertyChanged" />
+</member>
+<member name="F:LumiereServer.ClientWrapper.generalUsrDescriptor">
+ <summary>
+ The general user descriptor. Common to all subclients.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientWrapper.wrapperSystemId">
+ <summary>
+ The wrapper unique identifier
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientWrapper.clientHolder">
+ <summary>
+ The list of ClientInstances
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientWrapper.uiOnDestroy">
+ <summary>
+ The UI on destroy callback.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientWrapper.onEmptyWrapper">
+ <summary>
+ The on empty wrapper callback. What happens when there will no longer be clients in a wrapper.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientWrapper.size">
+ <summary>
+ The size of the wrapper.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientWrapper.ip">
+ <summary>
+ The ip of the wrapper.
+ </summary>
+</member>
+<member name="F:LumiereServer.ClientWrapper.isUIConnected">
+ <summary>
+ Tells whether this wrapper is ready for UI communication.
+ </summary>
+</member>
+<member name="M:LumiereServer.ClientWrapper.set_on_empty_wrapper(System.Func{LumiereServer.ClientWrapper,System.Boolean})">
+ <summary>
+ Sets the on empty wrapper callback.
+ </summary>
+ <param name="onempt">The callback.</param>
+</member>
+<member name="M:LumiereServer.ClientWrapper.set_on_destroy(System.Func{LumiereServer.ClientWrapper,LumiereServer.ClientInstance,System.Boolean})">
+ <summary>
+ Sets the on destroy callback.
+ </summary>
+ <param name="ondestr">The callback.</param>
+</member>
+<member name="M:LumiereServer.ClientWrapper.set_new_client(LumiereServer.ClientInstance,System.Func{LumiereServer.ClientInstance,LumiereServer.MPacketModule.com_packet,System.Boolean})">
+ <summary>
+ Adds a new client to this wrapper.
+ </summary>
+ <param name="client">The client.</param>
+ <param name="onrecv">The onrecv callback asociated to client.</param>
+</member>
+<member name="M:LumiereServer.ClientWrapper.set_wrapper_information(LumiereServer.ClientInstance@)">
+ <summary>
+ Sets some wrapper information.
+ </summary>
+ <param name="client">The client.</param>
+</member>
+<member name="M:LumiereServer.ClientWrapper.original_on_client_destroy(LumiereServer.ClientWrapper,LumiereServer.ClientInstance)">
+ <summary>
+ First callback to be called on client destruction.
+ </summary>
+ <param name="clientWrapper">The client wrapper.</param>
+ <param name="client">The client instance.</param>
+ <returns>true</returns>
+</member>
+<member name="M:LumiereServer.ClientWrapper.destroy_every_client">
+ <summary>
+ Destroys every client in the wrapper.
+ </summary>
+</member>
+<member name="M:LumiereServer.ClientWrapper.start_every_client_component">
+ <summary>
+ Starts the every client component.
+ </summary>
+</member>
+<member name="M:LumiereServer.ClientWrapper.ping_every_client_component">
+ <summary>
+ Pings the every client component.
+ </summary>
+</member>
+<member name="M:LumiereServer.ClientWrapper.get_one_active_client">
+ <summary>
+ Gets one active client.
+ </summary>
+ <returns>ClientInstance.</returns>
+</member>
+<member name="M:LumiereServer.ClientWrapper.get_client_component_by_type(System.Int32)">
+ <summary>
+ Gets a client component by type. There can only be one and only one client of a type.
+ </summary>
+ <param name="clienttypeindex">The clienttypeindex.</param>
+ <returns>ClientInstance.</returns>
+</member>
+<member name="M:LumiereServer.ClientWrapper.get_user_descriptor">
+ <summary>
+ Gets the user descriptor.
+ </summary>
+ <returns>userdescriptor.</returns>
+</member>
+<member name="M:LumiereServer.ClientWrapper.get_system_id">
+ <summary>
+ Gets the system identifier.
+ </summary>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.ClientWrapper.get_same_as(LumiereServer.ClientWrapper)">
+ <summary>
+ Equality operator between wrapper.
+ </summary>
+ <param name="wrapper1">The wrapper to compare against.</param>
+ <returns><c>true</c> if identical, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientWrapper.get_client_exists(System.Int32)">
+ <summary>
+ Tells if a client of a type exists
+ </summary>
+ <param name="index">The index.</param>
+ <returns><c>true</c> if exists, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ClientWrapper.ToString">
+ <summary>
+ Returns a <see cref="T:System.String" /> that represents this instance.
+ </summary>
+ <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+</member>
+<member name="M:LumiereServer.ClientWrapper.Finalize">
+ <summary>
+ Destructor
+ </summary>
+</member>
+<member name="T:LumiereServer.ClientWrapper.SafeObjectHandler`1">
+ <summary>
+ A class that safely locks a inner object for inter thread communication.
+ </summary>
+ <typeparam name="T">The object that is to be guarded.</typeparam>
+</member>
+<member name="P:LumiereServer.ClientWrapper.SafeObjectHandler`1.value">
+ <summary>
+ Gets or sets the value.
+ </summary>
+ <value>The value.</value>
+</member>
+<member name="M:LumiereServer.ClientWrapper.SafeObjectHandler`1.#ctor(`0@)">
+ <summary>
+ Initializes a new instance of the <see cref="!:SafeObjectHandler{T}"/> class.
+ </summary>
+ <param name="subject">The subject.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.Dispose(System.Boolean)">
+ <summary>
+ Represents an element in an XML resource (.resx) file.
+ </summary>
+ <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+</member>
+<member name="F:LumiereServer.LumiereServer.components">
+ <summary>
+ The components
+ </summary>
+</member>
+<member name="M:LumiereServer.LumiereServer.InitializeComponent">
+ <summary>
+ Initializes the component.
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._listbindingsource">
+ <summary>
+ The listbindingsource
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._panelInfoHolder">
+ <summary>
+ The panel information holder
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._labeluid">
+ <summary>
+ The labeluid
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label7">
+ <summary>
+ The label7
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label6">
+ <summary>
+ The label6
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label5">
+ <summary>
+ The label5
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label4">
+ <summary>
+ The label4
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label3">
+ <summary>
+ The label3
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._labelusername">
+ <summary>
+ The labelusername
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._mMenu">
+ <summary>
+ The m menu
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._FileToolStripMenuItem">
+ <summary>
+ The file tool strip menu item
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnViewClientLogs">
+ <summary>
+ The BTN view client logs
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ExitToolStripMenuItem">
+ <summary>
+ The exit tool strip menu item
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._HelpToolStripMenuItem">
+ <summary>
+ The help tool strip menu item
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._lextra">
+ <summary>
+ The lextra
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._lcustom">
+ <summary>
+ The lcustom
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._luser">
+ <summary>
+ The luser
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._luid">
+ <summary>
+ The luid
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._losver">
+ <summary>
+ The losver
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._lver">
+ <summary>
+ The lver
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ldesc">
+ <summary>
+ The ldesc
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel2">
+ <summary>
+ The panel2
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel5">
+ <summary>
+ The panel5
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label10">
+ <summary>
+ The label10
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel9">
+ <summary>
+ The panel9
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label12">
+ <summary>
+ The label12
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._panelDebugView">
+ <summary>
+ The panel debug view
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel13">
+ <summary>
+ The panel13
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label14">
+ <summary>
+ The label14
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnCam">
+ <summary>
+ The BTN cam
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnBan">
+ <summary>
+ The BTN ban
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnLocalDir">
+ <summary>
+ The BTN local dir
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnLive">
+ <summary>
+ The BTN live
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._pingDisabledClients">
+ <summary>
+ The ping disabled clients
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel3">
+ <summary>
+ The panel3
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label8">
+ <summary>
+ The label8
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label1">
+ <summary>
+ The label1
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label9">
+ <summary>
+ The label9
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._statusftp">
+ <summary>
+ The statusftp
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._statusshell">
+ <summary>
+ The statusshell
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnUnhideClientsPanel">
+ <summary>
+ The BTN unhide clients panel
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._hiddenPanel">
+ <summary>
+ The hidden panel
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpUrl">
+ <summary>
+ The FTP URL
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._iconList">
+ <summary>
+ The icon list
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._threadList">
+ <summary>
+ The thread list
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._cmd">
+ <summary>
+ The command
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._debugView">
+ <summary>
+ The debug view
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpMenu">
+ <summary>
+ The FTP menu
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpBtnDownloadFile">
+ <summary>
+ The FTP BTN download file
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpBtnDelete">
+ <summary>
+ The FTP BTN delete
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpBtnRename">
+ <summary>
+ The FTP BTN rename
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpMenuEmptyClick">
+ <summary>
+ The FTP menu empty click
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnFtpDownloadInterrupt">
+ <summary>
+ The BTN FTP download interrupt
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._clientList">
+ <summary>
+ The client list
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._lblColumnFtp3">
+ <summary>
+ The label column FTP3
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._lblColumnFtp2">
+ <summary>
+ The label column FTP2
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._lblColumnFtp1">
+ <summary>
+ The label column FTP1
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel12">
+ <summary>
+ The panel12
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel14">
+ <summary>
+ The panel14
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label16">
+ <summary>
+ The label16
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ToolStripSeparator1">
+ <summary>
+ The tool strip separator1
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpNewToolstrip">
+ <summary>
+ The FTP new toolstrip
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpBtnNewFolder">
+ <summary>
+ The FTP BTN new folder
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpBtnNewFile">
+ <summary>
+ The FTP BTN new file
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpBtnUpload">
+ <summary>
+ The FTP BTN upload
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._openFileDialog">
+ <summary>
+ The open file dialog
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnShortcutWindows">
+ <summary>
+ The BTN shortcut windows
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnShortcutTemp">
+ <summary>
+ The BTN shortcut temporary
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnShortcutAppData">
+ <summary>
+ The BTN shortcut application data
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnShortcutDesktop">
+ <summary>
+ The BTN shortcut desktop
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._HorizonDovaLumiereSombreToolStripMenuItem">
+ <summary>
+ The horizon dova lumiere sombre tool strip menu item
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnShortcutStartup">
+ <summary>
+ The BTN shortcut startup
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnShortcutStartupAll">
+ <summary>
+ The BTN shortcut startup all
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._uploadBackgroundWorker">
+ <summary>
+ The upload background worker
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label18">
+ <summary>
+ The label18
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._statusUploadMgr">
+ <summary>
+ The status upload MGR
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnFtpUploadInterrupt">
+ <summary>
+ The BTN FTP upload interrupt
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnFtpRun">
+ <summary>
+ The BTN FTP run
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnFtpRunAs">
+ <summary>
+ The BTN FTP run as
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ToolStripSeparator2">
+ <summary>
+ The tool strip separator2
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label20">
+ <summary>
+ The label20
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._statusDownloadMnager">
+ <summary>
+ The status download mnager
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnForceDownload">
+ <summary>
+ The BTN force download
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnForceUpload">
+ <summary>
+ The BTN force upload
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnForceFtp">
+ <summary>
+ The BTN force FTP
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnForceShell">
+ <summary>
+ The BTN force shell
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnDestroy">
+ <summary>
+ The BTN destroy
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Button6">
+ <summary>
+ The button6
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._panelComponentsList">
+ <summary>
+ The panel components list
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._MetroTabPage2">
+ <summary>
+ The metro tab page2
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel4">
+ <summary>
+ The panel4
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpBtnBack">
+ <summary>
+ The FTP BTN back
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel6">
+ <summary>
+ The panel6
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel1">
+ <summary>
+ The panel1
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._MetroTabPage1">
+ <summary>
+ The metro tab page1
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel8">
+ <summary>
+ The panel8
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel7">
+ <summary>
+ The panel7
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpView">
+ <summary>
+ The FTP view
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._clmnName">
+ <summary>
+ The CLMN name
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._clmnSize">
+ <summary>
+ The CLMN size
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._clmnLastWriteTime">
+ <summary>
+ The CLMN last write time
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label2">
+ <summary>
+ The label2
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnShortcutHome">
+ <summary>
+ The BTN shortcut home
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnShortcutRecycleBin">
+ <summary>
+ The BTN shortcut recycle bin
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label11">
+ <summary>
+ The label11
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpBtnRefresh">
+ <summary>
+ The FTP BTN refresh
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._txtEditUserDescriptor">
+ <summary>
+ The text edit user descriptor
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._panelEditUserDescriptor">
+ <summary>
+ The panel edit user descriptor
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._shellContextMenu">
+ <summary>
+ The shell context menu
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._shellBtnCancel">
+ <summary>
+ The shell BTN cancel
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._lblActivity">
+ <summary>
+ The label activity
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._cmdHistoryList">
+ <summary>
+ The command history list
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpOperationHistory">
+ <summary>
+ The FTP operation history
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._lblUploadName">
+ <summary>
+ The label upload name
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._lblDownloadName">
+ <summary>
+ The label download name
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnFtpOpen">
+ <summary>
+ The BTN FTP open
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ToolStripSeparator3">
+ <summary>
+ The tool strip separator3
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._MetroTabPage3">
+ <summary>
+ The metro tab page3
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._regKeyHolder">
+ <summary>
+ The reg key holder
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnForceRegedit">
+ <summary>
+ The BTN force regedit
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label15">
+ <summary>
+ The label15
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._statusRegedit">
+ <summary>
+ The status regedit
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._regValueHolder">
+ <summary>
+ The reg value holder
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._rgClmnName">
+ <summary>
+ The rg CLMN name
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._rgClmnType">
+ <summary>
+ The rg CLMN type
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._rgClmnData">
+ <summary>
+ The rg CLMN data
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Panel10">
+ <summary>
+ The panel10
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label17">
+ <summary>
+ The label17
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label19">
+ <summary>
+ The label19
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label21">
+ <summary>
+ The label21
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label22">
+ <summary>
+ The label22
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._regKeyContextMenu">
+ <summary>
+ The reg key context menu
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._regBtnKeyRefresh">
+ <summary>
+ The reg BTN key refresh
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ToolStripSeparator5">
+ <summary>
+ The tool strip separator5
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._regBtnKeyDelete">
+ <summary>
+ The reg BTN key delete
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ToolStripSeparator6">
+ <summary>
+ The tool strip separator6
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._regBtnKeyNewSubkey">
+ <summary>
+ The reg BTN key new subkey
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._regValueContextMenu">
+ <summary>
+ The reg value context menu
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._regBtnValueRefresh">
+ <summary>
+ The reg BTN value refresh
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._regBtnValueDelete">
+ <summary>
+ The reg BTN value delete
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._regBtnValueNewValue">
+ <summary>
+ The reg BTN value new value
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._btnForceVideo">
+ <summary>
+ The BTN force video
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._Label23">
+ <summary>
+ The label23
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._statusVideo">
+ <summary>
+ The status video
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpUploadProgressBar">
+ <summary>
+ The FTP upload progress bar
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._ftpDownloadProgressBar">
+ <summary>
+ The FTP download progress bar
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._TableLayoutPanel1">
+ <summary>
+ The table layout panel1
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._debugLowLevelView">
+ <summary>
+ The debug low level view
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.TcpListener">
+ <summary>
+ The TCP listener.
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.ClientCollectionSource">
+ <summary>
+ A event driven collection of client wrappers.
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.selectedClientWrapper">
+ <summary>
+ A selected client wrapper
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.safeSelectedClientWrapper">
+ <summary>
+ A thread safe selected client wrapper
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.emptystr">
+ <summary>
+ The empty information string.
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.cmp_on">
+ <summary>
+ String which holds switch values for the available clients
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.cmp_off">
+ <summary>
+ The CMP off
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.Folder">
+ <summary>
+ Folder
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.File">
+ <summary>
+ File
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.Home">
+ <summary>
+ Home
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.cmdPromptText">
+ <summary>
+ String which holds the real content of the command to be sent
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.databaseOfUsers">
+ <summary>
+ The database of users. Creates a unique connection.
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer._videoFrm">
+ <summary>
+ Window where the video stream frames will be drawn on.
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.videoData">
+ <summary>
+ Holds a video frame.
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.threadMainUIListener">
+ <summary>
+ Handles the new clients that want to connect
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.threadMainAuthentificatePreProcessor">
+ <summary>
+ Handles the authentification procedure for each client in a queue
+ </summary>
+</member>
+<member name="F:LumiereServer.LumiereServer.clientPendingAuthentificationConqurentQueue">
+ <summary>
+ Holds clients that need to pass authenitification.
+ </summary>
+</member>
+<member name="M:LumiereServer.LumiereServer.LumiereServer_Load(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Load event of the LumiereServer control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.doOnClientInitiation(LumiereServer.ClientInstance)">
+ <summary>
+ Actions to perform on client connection
+ </summary>
+ <param name="client">Instance of the connection</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.LumiereServer_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+ <summary>
+ Event captured on server close-down.
+ Clear allocated resources. Close conenctions gracefully.
+ </summary>
+ <param name="sender">Sender object</param>
+ <param name="e">Cancelation Token</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.onEmptyWrapperCallback(LumiereServer.ClientWrapper)">
+ <summary>
+ When a client wrapper becomes empty. No other client connected.
+ </summary>
+ <param name="clientWrapper">The client wrapper.</param>
+ <returns>true</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.clientDestroyedCallback(LumiereServer.ClientWrapper,LumiereServer.ClientInstance)">
+ <summary>
+ On client destruction. Cancel operations if any. Show UI updates.
+ </summary>
+ <param name="clientWrapper">The client wrapper.</param>
+ <param name="client">The client.</param>
+ <returns>true.</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.clientList_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ Handles the SelectedIndexChanged event of the clientList control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.clientList_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Handles the MouseClick event of the clientList control.
+ On event triggered means that I selected a new client from the list,
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.clientList_MouseLeave(System.Object,System.EventArgs)">
+ <summary>
+ Handles the MouseLeave event of the clientList control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.cmd_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+ <summary>
+ Handles the KeyPress event of the cmd control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.KeyPressEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.cmd_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ Handles the KeyDown event of the cmd control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.shellBtnCancel_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the shellBtnCancel control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.cmdHistoryList_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ Handles the SelectedIndexChanged event of the cmdHistoryList control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpUrl_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ Handles the KeyDown event of the ftpUrl control. Especially the Enter key
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpView_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Handles the MouseDoubleClick event of the ftpView control.
+ Clicked on a file/folder.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpView_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
+ <summary>
+ Handles the DragEnter event of the ftpView control.
+ Can drag and drop files only.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.DragEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpView_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
+ <summary>
+ Handles the DragDrop event of the ftpView control.
+ Can drag and drop files only.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.DragEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpView_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Handles the MouseUp event of the ftpView control.
+ Show context menu
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpBtnBackClick(System.Object,System.EventArgs)">
+ <summary>
+ FTPs the BTN back click.
+ </summary>
+ <param name="sender">The sender.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpBtnSearch_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the ftpBtnSearch control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpBtnDownloadFile_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the ftpBtnDownloadFile control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpBtnDelete_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the ftpBtnDelete control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpBtnRename_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the ftpBtnRename control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpBtnNewFolder_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the ftpBtnNewFolder control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpBtnNewFile_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the ftpBtnNewFile control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpBtnRefresh_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the ftpBtnRefresh control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpBtnUpload_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the ftpBtnUpload control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnShortcutDesktop_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnShortcutDesktop control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnShortcutAppData_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnShortcutAppData control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnShortcutStartup_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnShortcutStartup control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnShortcutStartupAll_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnShortcutStartupAll control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnShortcutTemp_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnShortcutTemp control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnShortcutWindows_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnShortcutWindows control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnShortcutHome_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnShortcutHome control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnShortcutRecycleBin_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnShortcutRecycleBin control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnFtpRunAs_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnFtpRunAs control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnFtpRun_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnFtpRun control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnFtpOpen_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnFtpOpen control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnFtpDownloadInterrupt_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnFtpDownloadInterrupt control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnFtpUploadInterrupt_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnFtpUploadInterrupt control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpActionDownloadProcess(System.Boolean)">
+ <summary>
+ FTPs the action download process.
+ </summary>
+ <param name="downloadToOpenLocallyAfterwards">if set to <c>true</c> [download to open locally afterwards].</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpActionCreateTransaction(System.Int32)">
+ <summary>
+ Create FTP transaction by type. i.e create folder etc.
+ </summary>
+ <param name="createDataTypeVal">The create data type value.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpActionNavigateTo(System.String)">
+ <summary>
+ Ftp view navigate to url.
+ </summary>
+ <param name="newUrl">The new URL.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpActionRunProgram(System.String,System.Boolean)">
+ <summary>
+ Ftp run program.
+ </summary>
+ <param name="appPath">The application path.</param>
+ <param name="invokeAdmin">if set to <c>true</c> [invoke admin].</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpActionUploadFilesTransaction(System.Collections.Generic.List{System.String})">
+ <summary>
+ FTPs action upload files transaction.
+ </summary>
+ <param name="arguments">The arguments.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.uploadBackgroundWorker_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+ <summary>
+ Handles the DoWork event of the uploadBackgroundWorker control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.ComponentModel.DoWorkEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.uploadBackgroundWorker_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+ <summary>
+ Handles the RunWorkerCompleted event of the uploadBackgroundWorker control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.ComponentModel.RunWorkerCompletedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpActionHandleShortcutRedirection(System.String)">
+ <summary>
+ Handle shortcut redirection i.e clicked on the Desktop shortcut etc..
+ </summary>
+ <param name="destinationUrl">The destination URL.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpActionNormalizeDirectoryPath(System.String@)">
+ <summary>
+ Normalize a string directory path. Always en in '\'
+ </summary>
+ <param name="desiredPath">The desired path.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ftpActionGetNormalizedUrl">
+ <summary>
+ Get a always ending in '\' path and update the url text ui component.
+ </summary>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.regedit_initialize">
+ <summary>
+ Initialize the regedit tree view component.
+ </summary>
+</member>
+<member name="M:LumiereServer.LumiereServer.regedit_get_keypath_argument(System.String)">
+ <summary>
+ Get a packet parameter that holds details with regard to the path in regedit i.e keypath\value    ''' </summary>
+ <param name="data">The data.</param>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.regedit_key_hit_test_node(System.Windows.Forms.TreeNode)">
+ <summary>
+ Retrieve info with regard to the selected node from client. Mark node as visited i.e cache the node.
+ </summary>
+ <param name="e">The e.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regedit_get_type_string(System.Int32)">
+ <summary>
+ Get regedit stringed version of value type.
+ </summary>
+ <param name="type">The type.</param>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.regeditActionCreateTransaction(System.Int32)">
+ <summary>
+ Create action transaction for regedit i.e create key etc..
+ </summary>
+ <param name="datatype">The datatype.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regKeyHolder_NodeMouseClick(System.Object,System.Windows.Forms.TreeNodeMouseClickEventArgs)">
+ <summary>
+ Handles the NodeMouseClick event of the regKeyHolder control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.TreeNodeMouseClickEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regBtnKeyRefresh_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the regBtnKeyRefresh control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regBtnKeyRename_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the regBtnKeyRename control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regBtnKeyDelete_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the regBtnKeyDelete control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regBtnKeyNewSubkey_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the regBtnKeyNewSubkey control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regBtnValueRefresh_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the regBtnValueRefresh control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regBtnValueDelete_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the regBtnValueDelete control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regBtnValueNewValue_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the regBtnValueNewValue control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regKeyHolder_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Handles the MouseUp event of the regKeyHolder control.
+ Show context menu on regedit keys right click
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regValueHolder_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Handles the MouseUp event of the regValueHolder control.
+ Show context menu on regedit value right click
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.regValueHolder_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Handles the MouseDoubleClick event of the regValueHolder control.
+ Start editing a double clicked regedit value.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnBan_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnBan control.
+ Ban user
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnDestroy_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnDestroy control.
+ Destroy client
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnViewClientLogs_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnViewClientLogs control.
+ Show client database window.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnLive_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnLive control.
+ Start the video stream. Create video window and display input feed in it.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnLocalDir_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnLocalDir control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnUnhideClientsPanel_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnUnhideClientsPanel control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.forceLoadActionCreateTransaction(System.UInt32)">
+ <summary>
+ Forces the load of a specific client component on the client's machine.
+ </summary>
+ <param name="clienttype">The clienttype.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnForceShell_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnForceShell control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnForceRegedit_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnForceRegedit control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnForceDownload_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnForceDownload control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnForceUpload_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnForceUpload control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnForceFtp_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnForceFtp control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.btnForceVideo_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnForceVideo control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.SetStructureMemberByName(System.Object,System.Object,System.String)">
+ <summary>
+ Sets the name of the structure member by.
+ </summary>
+ <param name="parentStructure">The parent structure.</param>
+ <param name="newFieldValue">The new field value.</param>
+ <param name="fieldName">Name of the field.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.GetStructureMemberByName(System.Object,System.String)">
+ <summary>
+ Gets the name of the structure member by.
+ </summary>
+ <param name="parentStructure">The parent structure.</param>
+ <param name="fieldName">Name of the field.</param>
+ <returns>System.Object.</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.prepareUserDescriptorControlForEdit(System.Windows.Forms.Control,System.String)">
+ <summary>
+ Prepares the user descriptor control for edit.
+ </summary>
+ <param name="winControl">The win control.</param>
+ <param name="userdescriptorMemberName">Name of the userdescriptor member.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.prepareUserDescriptorControlForSaveEdit">
+ <summary>
+ Prepares the user descriptor control for save edit.
+ </summary>
+</member>
+<member name="M:LumiereServer.LumiereServer.lcustom_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the lcustom control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.ldesc_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Handles the MouseClick event of the ldesc control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.lextra_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Handles the MouseClick event of the lextra control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.txtEditUserDescriptor_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ Handles the KeyDown event of the txtEditUserDescriptor control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.threadMainUIListenerFunc">
+ <summary>
+ Main thread that listesns for clients and adds them to a waiting list.
+ </summary>
+</member>
+<member name="M:LumiereServer.LumiereServer.threadMainAuthentificatePostProcessorFunc">
+ <summary>
+ Consumes the authentification waiting list.
+ </summary>
+</member>
+<member name="M:LumiereServer.LumiereServer.threadFtpReceiver(LumiereServer.ClientInstance,LumiereServer.MPacketModule.com_packet)">
+ <summary>
+ Ftp receiver thread
+ </summary>
+ <param name="client">The client.</param>
+ <param name="rPacket">The r packet.</param>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.threadShellReceiver(LumiereServer.ClientInstance,LumiereServer.MPacketModule.com_packet)">
+ <summary>
+ Shell thread.
+ </summary>
+ <param name="client">The client.</param>
+ <param name="rPacket">The r packet.</param>
+ <returns></returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.threadUploadMgrReceiver(LumiereServer.ClientInstance,LumiereServer.MPacketModule.com_packet)">
+ <summary>
+ Upload manager thread.
+ </summary>
+ <param name="client">The client.</param>
+ <param name="rPacket">The r packet.</param>
+ <returns></returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.threadRegeditMgr(LumiereServer.ClientInstance,LumiereServer.MPacketModule.com_packet)">
+ <summary>
+ Regedit thread.
+ </summary>
+ <param name="client">The client.</param>
+ <param name="rPacket">The r packet.</param>
+ <returns></returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.threadDownloadMgrReceiver(LumiereServer.ClientInstance,LumiereServer.MPacketModule.com_packet)">
+ <summary>
+ Download manager thread.
+ </summary>
+ <param name="client">The client.</param>
+ <param name="rPacket">The r packet.</param>
+ <returns></returns>
+</member>
+<member name="F:LumiereServer.LumiereServer.lastFrameTime">
+ <summary>
+ The last frame time
+ </summary>
+</member>
+<member name="M:LumiereServer.LumiereServer.threadScreenCapture(LumiereServer.ClientInstance,LumiereServer.MPacketModule.com_packet)">
+ <summary>
+ The video stream thread.
+ </summary>
+ <param name="client">The client.</param>
+ <param name="rPacket">The r packet.</param>
+ <returns></returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.WindowVideo_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+ <summary>
+ Handles the Closing event of the WindowVideo control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.threadMouseHandler(LumiereServer.ClientInstance,LumiereServer.MPacketModule.com_packet)">
+ <summary>
+ Mouse thread.
+ </summary>
+ <param name="client">The client.</param>
+ <param name="rPacket">The r packet.</param>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.pingDisabledClients_Tick(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Tick event of the pingDisabledClients control.
+ Check for inactive/timedout clients.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.get_client(System.Int32)">
+ <summary>
+ Gets a safe clientinstance.
+ </summary>
+ <param name="clienttype">The clienttype.</param>
+ <returns>ClientInstance.</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.get_active_client">
+ <summary>
+ Gets the active client.
+ </summary>
+ <returns>ClientInstance.</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.resetInformationPanel">
+ <summary>
+ Resets the information panel.
+ </summary>
+</member>
+<member name="M:LumiereServer.LumiereServer.linkDataToInformationPanel(LumiereServer.ClientWrapper)">
+ <summary>
+ Links the data to information panel.
+ </summary>
+ <param name="clWrapper">The cl wrapper.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.doThreadSafeObjectLinkedAction(System.Windows.Forms.Control,System.Func{System.Boolean})">
+ <summary>
+ Do a thread safe ui action.
+ </summary>
+ <param name="wtControl">The wt control.</param>
+ <param name="functionOnObject">The function on object.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.wTextBoxThread(System.Object,System.String,System.Boolean)">
+ <summary>
+ Safely write to a text component.
+ </summary>
+ <param name="tbox">The tbox.</param>
+ <param name="str">The string.</param>
+ <param name="append">if set to <c>true</c> [append].</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.debugMessage(System.String,System.Int32)">
+ <summary>
+ Show a debug message.
+ </summary>
+ <param name="data">The data.</param>
+ <param name="icode">The icode.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.debugMessageLowLevel(System.String,System.Int32)">
+ <summary>
+ Message low level.
+ </summary>
+ <param name="data">The data.</param>
+ <param name="icode">The icode.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.debugGetColorizationStyle(System.Int32)">
+ <summary>
+ Get colorization style by icode
+ </summary>
+ <param name="icode">The icode.</param>
+ <returns>Color.</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.debugGetInfoPrefix(System.Int32)">
+ <summary>
+ Debugs the get information prefix.
+ </summary>
+ <param name="icode">The icode.</param>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.LumiereServer.ExitToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the ExitToolStripMenuItem control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.LumiereServer.HelpToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the HelpToolStripMenuItem control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="T:LumiereServer.LumiereServer.SafeObjectHandler`1">
+ <summary>
+ STORES SAFELY an object. Once the object is accesed through a get property it is no longer safe.
+ </summary>
+ <typeparam name="T"></typeparam>
+</member>
+<member name="P:LumiereServer.LumiereServer.SafeObjectHandler`1.value">
+ <summary>
+ Gets or sets the value.
+ </summary>
+ <value>The value.</value>
+</member>
+<member name="M:LumiereServer.LumiereServer.SafeObjectHandler`1.#ctor(`0@)">
+ <summary>
+ Initializes a new instance of the <see cref="!:SafeObjectHandler{T}"/> class.
+ </summary>
+ <param name="subject">The subject.</param>
+</member>
+<member name="T:LumiereServer.MPacketModule">
+ <summary>
+ The com_packet structure and the Helpers.
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketModule.MAGIC_START">
+ <summary>
+ The magic start
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketModule.ARGUMENT_SIZE">
+ <summary>
+ The argument size
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketModule.szOfPacket">
+ <summary>
+ The size of packet
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketModule.PACKET_PWS">
+ <summary>
+ The packet PWS
+ </summary>
+</member>
+<member name="T:LumiereServer.MPacketModule.com_packet">
+ <summary>
+ Struct com_packet
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketModule.com_packet.magicStart">
+ <summary>
+ A magic start. For padding and shifting issues.
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketModule.com_packet.packetSize">
+ <summary>
+ The packet size
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketModule.com_packet.dataType">
+ <summary>
+ The data type
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketModule.com_packet.arguments">
+ <summary>
+ The arguments
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketModule.com_packet.checksum">
+ <summary>
+ The checksum of the packet
+ </summary>
+</member>
+<member name="F:LumiereServer.MPacketModule.com_packet.token">
+ <summary>
+ The token associated to this packet.
+ </summary>
+</member>
+<member name="M:LumiereServer.MPacketModule.com_packet.getPacketParamValue(System.String)">
+ <summary>
+ Gets the packet parameter values.
+ </summary>
+ <param name="param">The parameter.</param>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.MPacketModule.createPacketParam(System.String,System.String)">
+ <summary>
+ Creates a packet parameter.
+ </summary>
+ <param name="param">The parameter.</param>
+ <param name="value">The value.</param>
+ <returns>System.String.</returns>
+</member>
+<member name="M:LumiereServer.MPacketModule.convertPacketToStream(LumiereServer.MPacketModule.com_packet@)">
+ <summary>
+ Converts the packet to a byte stream.
+ </summary>
+ <param name="ccmPacket">The CCM packet.</param>
+ <returns>System.Byte().</returns>
+</member>
+<member name="M:LumiereServer.MPacketModule.getPacketFromStream(System.Byte[]@)">
+ <summary>
+ Gets the packet from stream.
+ </summary>
+ <param name="buffer">The buffer.</param>
+ <returns>com_packet.</returns>
+</member>
+<member name="M:LumiereServer.MPacketModule.computeChecksum(LumiereServer.MPacketModule.com_packet)">
+ <summary>
+ Computes the checksum of the packet.
+ </summary>
+ <param name="ccmPacket">The CCM packet.</param>
+ <returns>UInt64.</returns>
+</member>
+<member name="M:LumiereServer.MPacketModule.xor_ize_packet(System.Byte[])">
+ <summary>
+ Xorize packet.
+ </summary>
+ <param name="bufferedPacket">The buffered packet.</param>
+</member>
+<member name="M:LumiereServer.MPacketModule.xor_ize_stream(System.Byte[],System.UInt32,System.Int32)">
+ <summary>
+ Xors the ize stream.
+ </summary>
+ <param name="bufferedPacket">The buffered packet.</param>
+ <param name="size">The size.</param>
+ <param name="pws">The PWS.</param>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSet">
+ <summary>
+ Represents a strongly typed in-memory cache of data.
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.tableBlacklist">
+ <summary>
+ The table blacklist
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.tableRegisteredClients">
+ <summary>
+ The table registered clients
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet._schemaSerializationMode">
+ <summary>
+ The schema serialization mode
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet"/> class.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet"/> class.
+ </summary>
+ <param name="info">The data needed to serialize or deserialize an object.</param>
+ <param name="context">The source and destination of a given serialized stream.</param>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.Blacklist">
+ <summary>
+ Gets the blacklist.
+ </summary>
+ <value>The blacklist.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.RegisteredClients">
+ <summary>
+ Gets the registered clients.
+ </summary>
+ <value>The registered clients.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.SchemaSerializationMode">
+ <summary>
+ Gets or sets a <see cref="T:System.Data.SchemaSerializationMode" /> for a <see cref="T:System.Data.DataSet" />.
+ </summary>
+ <value>The schema serialization mode.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.Tables">
+ <summary>
+ Gets the collection of tables contained in the <see cref="T:System.Data.DataSet" />.
+ </summary>
+ <value>The tables.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.Relations">
+ <summary>
+ Gets the collection of relations that link tables and allow navigation from parent tables to child tables.
+ </summary>
+ <value>The relations.</value>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.InitializeDerivedDataSet">
+ <summary>
+ Deserialize all of the tables data of the DataSet from the binary or XML stream.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.Clone">
+ <summary>
+ Copies the structure of the <see cref="T:System.Data.DataSet" />, including all <see cref="T:System.Data.DataTable" /> schemas, relations, and constraints. Does not copy any data.
+ </summary>
+ <returns>A new <see cref="T:System.Data.DataSet" /> with the same schema as the current <see cref="T:System.Data.DataSet" />, but none of the data.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.ShouldSerializeTables">
+ <summary>
+ Gets a value indicating whether <see cref="P:System.Data.DataSet.Tables" /> property should be persisted.
+ </summary>
+ <returns><see langword="true" /> if the property value has been changed from its default; otherwise, <see langword="false" />.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.ShouldSerializeRelations">
+ <summary>
+ Gets a value indicating whether <see cref="P:System.Data.DataSet.Relations" /> property should be persisted.
+ </summary>
+ <returns><see langword="true" /> if the property value has been changed from its default; otherwise, <see langword="false" />.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.ReadXmlSerializable(System.Xml.XmlReader)">
+ <summary>
+ Ignores attributes and returns an empty DataSet.
+ </summary>
+ <param name="reader">The specified XML reader.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.GetSchemaSerializable">
+ <summary>
+ Returns a serializable <see cref="T:System.Xml.Schema.XmlSchema" /> instance.
+ </summary>
+ <returns>The <see cref="T:System.Xml.Schema.XmlSchema" /> instance.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.InitVars">
+ <summary>
+ Initializes the vars.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.InitVars(System.Boolean)">
+ <summary>
+ Initializes the vars.
+ </summary>
+ <param name="initTable">if set to <c>true</c> [initialize table].</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.InitClass">
+ <summary>
+ Initializes the class.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.ShouldSerializeBlacklist">
+ <summary>
+ Shoulds the serialize blacklist.
+ </summary>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.ShouldSerializeRegisteredClients">
+ <summary>
+ Shoulds the serialize registered clients.
+ </summary>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.SchemaChanged(System.Object,System.ComponentModel.CollectionChangeEventArgs)">
+ <summary>
+ Schemas the changed.
+ </summary>
+ <param name="sender">The sender.</param>
+ <param name="e">The <see cref="T:System.ComponentModel.CollectionChangeEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.GetTypedDataSetSchema(System.Xml.Schema.XmlSchemaSet)">
+ <summary>
+ Gets the typed data set schema.
+ </summary>
+ <param name="xs">The xs.</param>
+ <returns>System.Xml.Schema.XmlSchemaComplexType.</returns>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSet.BlacklistRowChangeEventHandler">
+ <summary>
+ Delegate BlacklistRowChangeEventHandler
+ </summary>
+ <param name="sender">The sender.</param>
+ <param name="e">The e.</param>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRowChangeEventHandler">
+ <summary>
+ Delegate RegisteredClientsRowChangeEventHandler
+ </summary>
+ <param name="sender">The sender.</param>
+ <param name="e">The e.</param>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable">
+ <summary>
+ Represents the strongly named DataTable class.
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.columnID">
+ <summary>
+ The column identifier
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.columnip">
+ <summary>
+ The columnip
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable"/> class.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.#ctor(System.Data.DataTable)">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable"/> class.
+ </summary>
+ <param name="table">The table.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable"/> class.
+ </summary>
+ <param name="info">The information.</param>
+ <param name="context">The context.</param>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.IDColumn">
+ <summary>
+ Gets the identifier column.
+ </summary>
+ <value>The identifier column.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.ipColumn">
+ <summary>
+ Gets the ip column.
+ </summary>
+ <value>The ip column.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.Count">
+ <summary>
+ Gets the count.
+ </summary>
+ <value>The count.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.Item(System.Int32)">
+ <summary>
+ Gets the item.
+ </summary>
+ <param name="index">The index.</param>
+ <value>The item.</value>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.AddBlacklistRow(LumiereServer.ServerClientManagement2003DataSet.BlacklistRow)">
+ <summary>
+ Adds the blacklist row.
+ </summary>
+ <param name="row">The row.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.AddBlacklistRow(System.String)">
+ <summary>
+ Adds the blacklist row.
+ </summary>
+ <param name="ip">The ip.</param>
+ <returns>BlacklistRow.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.FindByID(System.Int32)">
+ <summary>
+ Finds the by identifier.
+ </summary>
+ <param name="ID">The identifier.</param>
+ <returns>BlacklistRow.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.Clone">
+ <summary>
+ Clones the structure of the <see cref="T:System.Data.DataTable" />, including all <see cref="T:System.Data.DataTable" /> schemas and constraints.
+ </summary>
+ <returns>A new <see cref="T:System.Data.DataTable" /> with the same schema as the current <see cref="T:System.Data.DataTable" />.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.CreateInstance">
+ <summary>
+ Creates a new instance of <see cref="T:System.Data.DataTable" />.
+ </summary>
+ <returns>The new expression.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.InitVars">
+ <summary>
+ Initializes the vars.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.InitClass">
+ <summary>
+ Initializes the class.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.NewBlacklistRow">
+ <summary>
+ Creates new blacklistrow.
+ </summary>
+ <returns>BlacklistRow.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.NewRowFromBuilder(System.Data.DataRowBuilder)">
+ <summary>
+ Creates a new row from an existing row.
+ </summary>
+ <param name="builder">A <see cref="T:System.Data.DataRowBuilder" /> object.</param>
+ <returns>A <see cref="T:System.Data.DataRow" /> derived class.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.GetRowType">
+ <summary>
+ Gets the row type.
+ </summary>
+ <returns>The type of the <see cref="T:System.Data.DataRow" />.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.OnRowChanged(System.Data.DataRowChangeEventArgs)">
+ <summary>
+ Raises the <see cref="E:System.Data.DataTable.RowChanged" /> event.
+ </summary>
+ <param name="e">A <see cref="T:System.Data.DataRowChangeEventArgs" /> that contains the event data.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.OnRowChanging(System.Data.DataRowChangeEventArgs)">
+ <summary>
+ Raises the <see cref="E:System.Data.DataTable.RowChanging" /> event.
+ </summary>
+ <param name="e">A <see cref="T:System.Data.DataRowChangeEventArgs" /> that contains the event data.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.OnRowDeleted(System.Data.DataRowChangeEventArgs)">
+ <summary>
+ Raises the <see cref="E:System.Data.DataTable.RowDeleted" /> event.
+ </summary>
+ <param name="e">A <see cref="T:System.Data.DataRowChangeEventArgs" /> that contains the event data.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.OnRowDeleting(System.Data.DataRowChangeEventArgs)">
+ <summary>
+ Describes the type of access to user data for a user-defined method or function.
+ </summary>
+ <param name="e">The <see cref="T:System.Data.DataRowChangeEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.RemoveBlacklistRow(LumiereServer.ServerClientManagement2003DataSet.BlacklistRow)">
+ <summary>
+ Removes the blacklist row.
+ </summary>
+ <param name="row">The row.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable.GetTypedTableSchema(System.Xml.Schema.XmlSchemaSet)">
+ <summary>
+ Gets the typed table schema.
+ </summary>
+ <param name="xs">The xs.</param>
+ <returns>System.Xml.Schema.XmlSchemaComplexType.</returns>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable">
+ <summary>
+ Represents the strongly named DataTable class.
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.columnID">
+ <summary>
+ The column identifier
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.columnip">
+ <summary>
+ The columnip
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.columnusername">
+ <summary>
+ The columnusername
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable"/> class.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.#ctor(System.Data.DataTable)">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable"/> class.
+ </summary>
+ <param name="table">The table.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable"/> class.
+ </summary>
+ <param name="info">The information.</param>
+ <param name="context">The context.</param>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.IDColumn">
+ <summary>
+ Gets the identifier column.
+ </summary>
+ <value>The identifier column.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.ipColumn">
+ <summary>
+ Gets the ip column.
+ </summary>
+ <value>The ip column.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.usernameColumn">
+ <summary>
+ Gets the username column.
+ </summary>
+ <value>The username column.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.Count">
+ <summary>
+ Gets the count.
+ </summary>
+ <value>The count.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.Item(System.Int32)">
+ <summary>
+ Gets the item.
+ </summary>
+ <param name="index">The index.</param>
+ <value>The item.</value>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.AddRegisteredClientsRow(LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow)">
+ <summary>
+ Adds the registered clients row.
+ </summary>
+ <param name="row">The row.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.AddRegisteredClientsRow(System.String,System.String)">
+ <summary>
+ Adds the registered clients row.
+ </summary>
+ <param name="ip">The ip.</param>
+ <param name="username">The username.</param>
+ <returns>RegisteredClientsRow.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.FindByID(System.Int32)">
+ <summary>
+ Finds the by identifier.
+ </summary>
+ <param name="ID">The identifier.</param>
+ <returns>RegisteredClientsRow.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.Clone">
+ <summary>
+ Clones the structure of the <see cref="T:System.Data.DataTable" />, including all <see cref="T:System.Data.DataTable" /> schemas and constraints.
+ </summary>
+ <returns>A new <see cref="T:System.Data.DataTable" /> with the same schema as the current <see cref="T:System.Data.DataTable" />.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.CreateInstance">
+ <summary>
+ Creates a new instance of <see cref="T:System.Data.DataTable" />.
+ </summary>
+ <returns>The new expression.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.InitVars">
+ <summary>
+ Initializes the vars.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.InitClass">
+ <summary>
+ Initializes the class.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.NewRegisteredClientsRow">
+ <summary>
+ Creates new registeredclientsrow.
+ </summary>
+ <returns>RegisteredClientsRow.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.NewRowFromBuilder(System.Data.DataRowBuilder)">
+ <summary>
+ Creates a new row from an existing row.
+ </summary>
+ <param name="builder">A <see cref="T:System.Data.DataRowBuilder" /> object.</param>
+ <returns>A <see cref="T:System.Data.DataRow" /> derived class.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.GetRowType">
+ <summary>
+ Gets the row type.
+ </summary>
+ <returns>The type of the <see cref="T:System.Data.DataRow" />.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.OnRowChanged(System.Data.DataRowChangeEventArgs)">
+ <summary>
+ Raises the <see cref="E:System.Data.DataTable.RowChanged" /> event.
+ </summary>
+ <param name="e">A <see cref="T:System.Data.DataRowChangeEventArgs" /> that contains the event data.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.OnRowChanging(System.Data.DataRowChangeEventArgs)">
+ <summary>
+ Raises the <see cref="E:System.Data.DataTable.RowChanging" /> event.
+ </summary>
+ <param name="e">A <see cref="T:System.Data.DataRowChangeEventArgs" /> that contains the event data.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.OnRowDeleted(System.Data.DataRowChangeEventArgs)">
+ <summary>
+ Raises the <see cref="E:System.Data.DataTable.RowDeleted" /> event.
+ </summary>
+ <param name="e">A <see cref="T:System.Data.DataRowChangeEventArgs" /> that contains the event data.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.OnRowDeleting(System.Data.DataRowChangeEventArgs)">
+ <summary>
+ Describes the type of access to user data for a user-defined method or function.
+ </summary>
+ <param name="e">The <see cref="T:System.Data.DataRowChangeEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.RemoveRegisteredClientsRow(LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow)">
+ <summary>
+ Removes the registered clients row.
+ </summary>
+ <param name="row">The row.</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable.GetTypedTableSchema(System.Xml.Schema.XmlSchemaSet)">
+ <summary>
+ Gets the typed table schema.
+ </summary>
+ <param name="xs">The xs.</param>
+ <returns>System.Xml.Schema.XmlSchemaComplexType.</returns>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSet.BlacklistRow">
+ <summary>
+ Represents strongly named DataRow class.
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.BlacklistRow.tableBlacklist">
+ <summary>
+ The table blacklist
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistRow.#ctor(System.Data.DataRowBuilder)">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet.BlacklistRow"/> class.
+ </summary>
+ <param name="rb">The rb.</param>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.BlacklistRow.ID">
+ <summary>
+ Gets or sets the identifier.
+ </summary>
+ <value>The identifier.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.BlacklistRow.ip">
+ <summary>
+ Gets or sets the ip.
+ </summary>
+ <value>The ip.</value>
+ <exception cref="T:System.Data.StrongTypingException">The value for column 'ip' in table 'Blacklist' is DBNull.</exception>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistRow.IsipNull">
+ <summary>
+ Isips the null.
+ </summary>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistRow.SetipNull">
+ <summary>
+ Setips the null.
+ </summary>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow">
+ <summary>
+ Represents strongly named DataRow class.
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow.tableRegisteredClients">
+ <summary>
+ The table registered clients
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow.#ctor(System.Data.DataRowBuilder)">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow"/> class.
+ </summary>
+ <param name="rb">The rb.</param>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow.ID">
+ <summary>
+ Gets or sets the identifier.
+ </summary>
+ <value>The identifier.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow.ip">
+ <summary>
+ Gets or sets the ip.
+ </summary>
+ <value>The ip.</value>
+ <exception cref="T:System.Data.StrongTypingException">The value for column 'ip' in table 'RegisteredClients' is DBNull.</exception>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow.username">
+ <summary>
+ Gets or sets the username.
+ </summary>
+ <value>The username.</value>
+ <exception cref="T:System.Data.StrongTypingException">The value for column 'username' in table 'RegisteredClients' is DBNull.</exception>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow.IsipNull">
+ <summary>
+ Isips the null.
+ </summary>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow.SetipNull">
+ <summary>
+ Setips the null.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow.IsusernameNull">
+ <summary>
+ Isusernames the null.
+ </summary>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow.SetusernameNull">
+ <summary>
+ Setusernames the null.
+ </summary>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSet.BlacklistRowChangeEvent">
+ <summary>
+ Row event argument class
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.BlacklistRowChangeEvent.eventRow">
+ <summary>
+ The event row
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.BlacklistRowChangeEvent.eventAction">
+ <summary>
+ The event action
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.BlacklistRowChangeEvent.#ctor(LumiereServer.ServerClientManagement2003DataSet.BlacklistRow,System.Data.DataRowAction)">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet.BlacklistRowChangeEvent"/> class.
+ </summary>
+ <param name="row">The row.</param>
+ <param name="action">The action.</param>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.BlacklistRowChangeEvent.Row">
+ <summary>
+ Gets the row.
+ </summary>
+ <value>The row.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.BlacklistRowChangeEvent.Action">
+ <summary>
+ Gets the action.
+ </summary>
+ <value>The action.</value>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRowChangeEvent">
+ <summary>
+ Row event argument class
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRowChangeEvent.eventRow">
+ <summary>
+ The event row
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRowChangeEvent.eventAction">
+ <summary>
+ The event action
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRowChangeEvent.#ctor(LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRow,System.Data.DataRowAction)">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRowChangeEvent"/> class.
+ </summary>
+ <param name="row">The row.</param>
+ <param name="action">The action.</param>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRowChangeEvent.Row">
+ <summary>
+ Gets the row.
+ </summary>
+ <value>The row.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsRowChangeEvent.Action">
+ <summary>
+ Gets the action.
+ </summary>
+ <value>The action.</value>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter">
+ <summary>
+ Represents the connection and commands used to retrieve and save data.
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.__adapter">
+ <summary>
+ The adapter
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter._connection">
+ <summary>
+ The connection
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter._transaction">
+ <summary>
+ The transaction
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter._commandCollection">
+ <summary>
+ The command collection
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter._clearBeforeFill">
+ <summary>
+ The clear before fill
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter"/> class.
+ </summary>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.Adapter">
+ <summary>
+ Gets the adapter.
+ </summary>
+ <value>The adapter.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.Connection">
+ <summary>
+ Gets or sets the connection.
+ </summary>
+ <value>The connection.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.Transaction">
+ <summary>
+ Gets or sets the transaction.
+ </summary>
+ <value>The transaction.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.CommandCollection">
+ <summary>
+ Gets the command collection.
+ </summary>
+ <value>The command collection.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.ClearBeforeFill">
+ <summary>
+ Gets or sets a value indicating whether [clear before fill].
+ </summary>
+ <value><c>true</c> if [clear before fill]; otherwise, <c>false</c>.</value>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.InitAdapter">
+ <summary>
+ Initializes the adapter.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.InitConnection">
+ <summary>
+ Initializes the connection.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.InitCommandCollection">
+ <summary>
+ Initializes the command collection.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.Fill(LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable)">
+ <summary>
+ Fills the specified data table.
+ </summary>
+ <param name="dataTable">The data table.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.GetData">
+ <summary>
+ Gets the data.
+ </summary>
+ <returns>ServerClientManagement2003DataSet.BlacklistDataTable.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.Update(LumiereServer.ServerClientManagement2003DataSet.BlacklistDataTable)">
+ <summary>
+ Updates the specified data table.
+ </summary>
+ <param name="dataTable">The data table.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.Update(LumiereServer.ServerClientManagement2003DataSet)">
+ <summary>
+ Updates the specified data set.
+ </summary>
+ <param name="dataSet">The data set.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.Update(System.Data.DataRow)">
+ <summary>
+ Updates the specified data row.
+ </summary>
+ <param name="dataRow">The data row.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.Update(System.Data.DataRow[])">
+ <summary>
+ Updates the specified data rows.
+ </summary>
+ <param name="dataRows">The data rows.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.Delete(System.Int32,System.String)">
+ <summary>
+ Deletes the specified original identifier.
+ </summary>
+ <param name="Original_ID">The original identifier.</param>
+ <param name="Original_ip">The original ip.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.Insert(System.String)">
+ <summary>
+ Inserts the specified ip.
+ </summary>
+ <param name="ip">The ip.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.BlacklistTableAdapter.Update(System.String,System.Int32,System.String)">
+ <summary>
+ Updates the specified ip.
+ </summary>
+ <param name="ip">The ip.</param>
+ <param name="Original_ID">The original identifier.</param>
+ <param name="Original_ip">The original ip.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter">
+ <summary>
+ Represents the connection and commands used to retrieve and save data.
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.__adapter">
+ <summary>
+ The adapter
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter._connection">
+ <summary>
+ The connection
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter._transaction">
+ <summary>
+ The transaction
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter._commandCollection">
+ <summary>
+ The command collection
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter._clearBeforeFill">
+ <summary>
+ The clear before fill
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter"/> class.
+ </summary>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.Adapter">
+ <summary>
+ Gets the adapter.
+ </summary>
+ <value>The adapter.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.Connection">
+ <summary>
+ Gets or sets the connection.
+ </summary>
+ <value>The connection.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.Transaction">
+ <summary>
+ Gets or sets the transaction.
+ </summary>
+ <value>The transaction.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.CommandCollection">
+ <summary>
+ Gets the command collection.
+ </summary>
+ <value>The command collection.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.ClearBeforeFill">
+ <summary>
+ Gets or sets a value indicating whether [clear before fill].
+ </summary>
+ <value><c>true</c> if [clear before fill]; otherwise, <c>false</c>.</value>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.InitAdapter">
+ <summary>
+ Initializes the adapter.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.InitConnection">
+ <summary>
+ Initializes the connection.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.InitCommandCollection">
+ <summary>
+ Initializes the command collection.
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.Fill(LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable)">
+ <summary>
+ Fills the specified data table.
+ </summary>
+ <param name="dataTable">The data table.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.GetData">
+ <summary>
+ Gets the data.
+ </summary>
+ <returns>ServerClientManagement2003DataSet.RegisteredClientsDataTable.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.Update(LumiereServer.ServerClientManagement2003DataSet.RegisteredClientsDataTable)">
+ <summary>
+ Updates the specified data table.
+ </summary>
+ <param name="dataTable">The data table.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.Update(LumiereServer.ServerClientManagement2003DataSet)">
+ <summary>
+ Updates the specified data set.
+ </summary>
+ <param name="dataSet">The data set.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.Update(System.Data.DataRow)">
+ <summary>
+ Updates the specified data row.
+ </summary>
+ <param name="dataRow">The data row.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.Update(System.Data.DataRow[])">
+ <summary>
+ Updates the specified data rows.
+ </summary>
+ <param name="dataRows">The data rows.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.Delete(System.Int32,System.String,System.String)">
+ <summary>
+ Deletes the specified original identifier.
+ </summary>
+ <param name="Original_ID">The original identifier.</param>
+ <param name="Original_ip">The original ip.</param>
+ <param name="Original_username">The original username.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.Insert(System.String,System.String)">
+ <summary>
+ Inserts the specified ip.
+ </summary>
+ <param name="ip">The ip.</param>
+ <param name="username">The username.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.RegisteredClientsTableAdapter.Update(System.String,System.String,System.Int32,System.String,System.String)">
+ <summary>
+ Updates the specified ip.
+ </summary>
+ <param name="ip">The ip.</param>
+ <param name="username">The username.</param>
+ <param name="Original_ID">The original identifier.</param>
+ <param name="Original_ip">The original ip.</param>
+ <param name="Original_username">The original username.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager">
+ <summary>
+ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager._updateOrder">
+ <summary>
+ The update order
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager._blacklistTableAdapter">
+ <summary>
+ The blacklist table adapter
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager._registeredClientsTableAdapter">
+ <summary>
+ The registered clients table adapter
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager._backupDataSetBeforeUpdate">
+ <summary>
+ The backup data set before update
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager._connection">
+ <summary>
+ The connection
+ </summary>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.UpdateOrder">
+ <summary>
+ Gets or sets the update order.
+ </summary>
+ <value>The update order.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.BlacklistTableAdapter">
+ <summary>
+ Gets or sets the blacklist table adapter.
+ </summary>
+ <value>The blacklist table adapter.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.RegisteredClientsTableAdapter">
+ <summary>
+ Gets or sets the registered clients table adapter.
+ </summary>
+ <value>The registered clients table adapter.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.BackupDataSetBeforeUpdate">
+ <summary>
+ Gets or sets a value indicating whether [backup data set before update].
+ </summary>
+ <value><c>true</c> if [backup data set before update]; otherwise, <c>false</c>.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.Connection">
+ <summary>
+ Gets or sets the connection.
+ </summary>
+ <value>The connection.</value>
+</member>
+<member name="P:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.TableAdapterInstanceCount">
+ <summary>
+ Gets the table adapter instance count.
+ </summary>
+ <value>The table adapter instance count.</value>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(LumiereServer.ServerClientManagement2003DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+ <summary>
+ Update rows in top-down order.
+ </summary>
+ <param name="dataSet">The data set.</param>
+ <param name="allChangedRows">All changed rows.</param>
+ <param name="allAddedRows">All added rows.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(LumiereServer.ServerClientManagement2003DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+ <summary>
+ Insert rows in top-down order.
+ </summary>
+ <param name="dataSet">The data set.</param>
+ <param name="allAddedRows">All added rows.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(LumiereServer.ServerClientManagement2003DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+ <summary>
+ Delete rows in bottom-up order.
+ </summary>
+ <param name="dataSet">The data set.</param>
+ <param name="allChangedRows">All changed rows.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+ <summary>
+ Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+ </summary>
+ <param name="updatedRows">The updated rows.</param>
+ <param name="allAddedRows">All added rows.</param>
+ <returns>System.Data.DataRow().</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.SortSelfReferenceRows(System.Data.DataRow[],System.Data.DataRelation,System.Boolean)">
+ <summary>
+ Sorts the self reference rows.
+ </summary>
+ <param name="rows">The rows.</param>
+ <param name="relation">The relation.</param>
+ <param name="childFirst">if set to <c>true</c> [child first].</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.MatchTableAdapterConnection(System.Data.IDbConnection)">
+ <summary>
+ Matches the table adapter connection.
+ </summary>
+ <param name="inputConnection">The input connection.</param>
+ <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+ <summary>
+ Update Order Option
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete">
+ <summary>
+ The insert update delete
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.UpdateInsertDelete">
+ <summary>
+ The update insert delete
+ </summary>
+</member>
+<member name="T:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+ <summary>
+ Used to sort self-referenced table's rows
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer._relation">
+ <summary>
+ The relation
+ </summary>
+</member>
+<member name="F:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer._childFirst">
+ <summary>
+ The child first
+ </summary>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer.#ctor(System.Data.DataRelation,System.Boolean)">
+ <summary>
+ Initializes a new instance of the <see cref="T:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer"/> class.
+ </summary>
+ <param name="relation">The relation.</param>
+ <param name="childFirst">if set to <c>true</c> [child first].</param>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer.GetRoot(System.Data.DataRow,System.Int32@)">
+ <summary>
+ Gets the root.
+ </summary>
+ <param name="row">The row.</param>
+ <param name="distance">The distance.</param>
+ <returns>System.Data.DataRow.</returns>
+</member>
+<member name="M:LumiereServer.ServerClientManagement2003DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer.Compare(System.Data.DataRow,System.Data.DataRow)">
+ <summary>
+ Compares the specified row1.
+ </summary>
+ <param name="row1">The row1.</param>
+ <param name="row2">The row2.</param>
+ <returns>System.Int32.</returns>
+</member>
+<member name="T:LumiereServer.WindowViewClientLogs">
+ <summary>
+ Class WindowViewClientLogs.
+ Implements the <see cref="T:System.Windows.Forms.Form" />
+ </summary>
+ <seealso cref="T:System.Windows.Forms.Form" />
+</member>
+<member name="F:LumiereServer.WindowViewClientLogs.databaseOfUsers">
+ <summary>
+ The database of users
+ </summary>
+</member>
+<member name="F:LumiereServer.WindowViewClientLogs.databaseInited">
+ <summary>
+ The database inited
+ </summary>
+</member>
+<member name="M:LumiereServer.WindowViewClientLogs.updateGridView">
+ <summary>
+ Updates the grid view.
+ </summary>
+</member>
+<member name="M:LumiereServer.WindowViewClientLogs.ViewClientLogs_Load(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Load event of the ViewClientLogs control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.WindowViewClientLogs.setDatabase(LumiereServer.DatabaseUsers)">
+ <summary>
+ Sets the database.
+ </summary>
+ <param name="pDatabaseOfUsers">The p database of users.</param>
+</member>
+<member name="M:LumiereServer.WindowViewClientLogs.btnmvtoblacklist_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnmvtoblacklist control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.WindowViewClientLogs.btnremofrmblacklist_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnremofrmblacklist control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.WindowViewClientLogs.btnmvtoblacklist_txt_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Click event of the btnmvtoblacklist_txt control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:LumiereServer.WindowViewClientLogs.txtip_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ Handles the TextChanged event of the txtip control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+</members>
+</doc>

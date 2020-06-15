@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LumiereServer.ClientCollectionSource_" Collapsed="true">
+    <Position X="7" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClientCollection.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiereServer.ClientInstance" Collapsed="true">
+    <Position X="7.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QMABAASiAAAIUAKCAJCAAEAAOAEAAASQBAMkkBBAACE=</HashCode>
+      <FileName>ClientInstance.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiereServer.ClientWrapper" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="1.5" Width="3" />
+    <NestedTypes>
+      <Class Name="LumiereServer.ClientWrapper.SafeObjectHandler(Of T)" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ClientWrapper.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>QQCAIICAAAgAAECEAIAAEAAggAAAAAAAAABgACABEQE=</HashCode>
+      <FileName>ClientWrapper.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumiereServer.DatabaseUsers" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAACAAEAEQAAAAAAAABAAAAAACAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>DatabaseUsers.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiereServer.LumiereServer">
+    <Position X="3.5" Y="11.5" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="LumiereServer.LumiereServer.SafeObjectHandler(Of T)" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LumiereServer.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>GXv+9nItv357XqbGvvyf+tWf4H//u711P9mUr13gJHI=</HashCode>
+      <FileName>LumiereServer.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiereServer.Tokenizer" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAARgBQAAAAAABAAAAAAABIAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Tokenizer.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiereServer.WindowByteViewer">
+    <Position X="10.5" Y="7.25" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAECCAAAEAEACAAABCAAAAAAAAAAAAIAMAAAA=</HashCode>
+      <FileName>WindowByteViewer.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiereServer.WindowHelp" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAASAAAAAAgACEAABCgAAAAAAAAACACAAQAAA=</HashCode>
+      <FileName>WindowHelp.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiereServer.WindowRegNewValue" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAECAAEAEAAACAAACCAAAIEAAAAAAAAAIAAEA=</HashCode>
+      <FileName>WindowRegNewValue.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiereServer.WindowVideo" Collapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAEAGKgAgBAAEQCAAAgCAkJiQEABSQAAACAAQCA=</HashCode>
+      <FileName>WindowVideo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiereServer.WindowViewClientLogs" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAKAQAQBAAICAACACAAAAIQADAgIYAAAAAQE=</HashCode>
+      <FileName>WindowViewClientLogs.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.Form">
+    <Position X="0.5" Y="0.5" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="System.Windows.Forms.Form.ControlCollection" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Collections.ObjectModel.ObservableCollection(Of T)" Collapsed="true">
+    <Position X="3" Y="10.25" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Module Name="LumiereServer.Constants" Collapsed="true">
+    <Position X="3.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Constants.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="LumiereServer.MClientTypes">
+    <Position X="0.75" Y="11" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="LumiereServer.MClientTypes.clientTypes">
+        <TypeIdentifier>
+          <NewMemberFileName>MClientTypes.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MClientTypes.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="LumiereServer.MDataTypes">
+    <Position X="7.5" Y="9.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="LumiereServer.MDataTypes.dataTypes">
+        <TypeIdentifier>
+          <NewMemberFileName>MDataTypes.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MDataTypes.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="LumiereServer.MemoryUtilities">
+    <Position X="3" Y="7" Width="2.25" />
+    <NestedTypes>
+      <Enum Name="LumiereServer.MemoryUtilities.informationcode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MemoryUtilities.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAQAAAAAAAAQAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>MemoryUtilities.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="LumiereServer.MGdiPinvoke" Collapsed="true">
+    <Position X="0.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAACJAAADAAACAAgAAGAAAAAAAAFA=</HashCode>
+      <FileName>MGdiPinvoke.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="LumiereServer.MPacketModule" Collapsed="true">
+    <Position X="0.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAQggACAEAAAAAAAAAAAIAAQAEAAAIA=</HashCode>
+      <FileName>MPacketModule.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="LumiereServer.MPacketUserDescriptor">
+    <Position X="0.5" Y="5.25" Width="2" />
+    <NestedTypes>
+      <Class Name="LumiereServer.MPacketUserDescriptor.userdescriptor" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MPacketUserDescriptor.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAEAAAABACAQAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>MPacketUserDescriptor.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="LumiereServer.WindowsStructures">
+    <Position X="7.25" Y="6.75" Width="2.25" />
+    <NestedTypes>
+      <Struct Name="LumiereServer.WindowsStructures.FILETIME" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>WindowsStructures.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="LumiereServer.WindowsStructures.WIN32_FIND_DATAA" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>WindowsStructures.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAQAAAAAAAAAAEAAAAAAAAAAAAAAAACAAAAg=</HashCode>
+      <FileName>WindowsStructures.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Segoe UI" Size="10" />
+</ClassDiagram>
