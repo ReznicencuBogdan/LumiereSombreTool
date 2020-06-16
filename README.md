@@ -14,7 +14,7 @@ That involved writing the customer feature list, the technical and non-technical
 - [x] Unit Tests
 
 
-The software that the project is based on is a tool that me and my brother @AntonVonDelta developed in 2013, as part of a local competition that involved building polymorphic, modular AV evading CC devices. One of the first versions was actually quite popular in our school, though it was a ‘non-invasive’ version; The following code Is a refactoring of the server built for that first version, and proves the importance of a team in the grand-scheme of a project. 
+The software that the project is based on is a tool that me and my brother @AntonVonDelta developed in 2013, as part of a local competition that involved building polymorphic, modular AV evading CC devices. One of the first versions was actually quite popular in  school, though it was a ‘non-invasive’ version; The following code Is a refactoring of the server built for that first version, and proves the importance of teamwork in the grand-scheme of a project. 
 
 In this refactoring, the server plays the role of a Remote Administration Tool that can assist server adminsitrators in their tasks.
 
@@ -22,4 +22,4 @@ Leader | Project Name | Version
 ------------ | ------------- | -------------
 Reznicencu Bogdan | Lumiere Sombre | v1.1.013
 
-#####  **Note**: This server, although presents a lot of interesting features, it is nothing more than a child's play from a worm summer of 2013. It shouldn't be used in important builds unless you are sure you can manage the vulnerbilities it involves.
+#####  **Note**: It shouldn't be used in important builds unless you are sure you can manage the vulnerbilities it involves.
