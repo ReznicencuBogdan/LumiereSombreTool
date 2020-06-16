@@ -22,4 +22,4 @@ Leader | Project Name | Version
 ------------ | ------------- | -------------
 Reznicencu Bogdan | Lumiere Sombre | v1.1.013
 
-#####  **Note**: This server, although presents a lot of interesting features, it is nothing more than a child's play from then worm summer of 2013. It shouldn't be used in important builds unless you are sure you can manage the vulnerbilities it involves.
+#####  **Note**: This server, although presents a lot of interesting features, it is nothing more than a child's play from a worm summer of 2013. It shouldn't be used in important builds unless you are sure you can manage the vulnerbilities it involves.
